@@ -125,7 +125,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 - Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid  
-   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
+  KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
