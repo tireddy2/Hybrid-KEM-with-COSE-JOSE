@@ -115,20 +115,20 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 ## JOSE Algorithms Registry 
 
 - Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-AES256GCM
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM,  
-  the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid 
+  KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
-- Change Controller: IESG
+- Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, 
-  the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid  
+   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
-- Change Controller: IESG
+- Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
@@ -140,18 +140,18 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 *  Name: HPKE-Base-X25519Kyber768-SHA256-AES256GCM
 *  Value: TBD1 
-*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the   
+*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the  
    HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IESG
+*  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
 
 *  Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
 *  Value: TBD2
-*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the    
-   HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid      
+   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IESG
+*  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
 
 # Acknowledgments
