@@ -109,11 +109,10 @@ The "KEM", "KDF", and "AEAD" values are conceptually taken from the HPKE IANA re
 For readability the algorithm ciphersuites labels are built according to the following scheme:
 
 ~~~
-   HPKE-<KEM>-<KDF>-<AEAD>
+   HPKE-<Mode>-<KEM>-<KDF>-<AEAD>
 ~~~
 
-The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that PQ/T Hybrid KEM is not an authenticated KEM.    Authenticated KEM is only possible where both parties contribute a PQC KEM public key and Traditional public key to the overall session key.
-The HPKE Base mode can only be supported with PQ/T Hybrid KEM in HPKE. 
+The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. Authenticated KEM is only possible when both parties contribute a PQC KEM public key and a traditional public key to the overall session key. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
 # Security Considerations
 
@@ -128,7 +127,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 ## JOSE Algorithms Registry 
 
 - Algorithm Name: HPKE-X25519Kyber768-SHA256-AES256GCM
-- Algorithm Description: Cipher suite for JOSE-HPKE that uses the X25519Kyber768Draft00 Hybrid 
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid 
   KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
@@ -136,8 +135,8 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
-- Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
-- Algorithm Description: Cipher suite for JOSE-HPKE that uses the X25519Kyber768Draft00 Hybrid  
+- Algorithm Name: HPKE-X25519Kyber768-SHA256-ChaCha20Poly1305
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid  
   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
