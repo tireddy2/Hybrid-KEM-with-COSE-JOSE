@@ -36,7 +36,12 @@ author:
     region: Karnataka
     country: India
     email: "kondtir@gmail.com"
-
+ -
+    fullname: Hannes Tschofenig
+    organization:
+    city:
+    country: Germany
+    email: "hannes.tschofenig@gmx.net"
 
  
 normative:
@@ -100,7 +105,14 @@ This specification registers a number of PQ/T Hybrid KEMs for use with HPKE. A c
 
 The "KEM", "KDF", and "AEAD" values are conceptually taken from the HPKE IANA registry {{HPKE-IANA}}. Hence, JOSE and COSE cannot use an algorithm combination that is not already available with HPKE.
 
-The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}.
+
+For readability the algorithm ciphersuites labels are built according to the following scheme:
+
+~~~
+   HPKE-<Mode>-<KEM>-<KDF>-<AEAD>
+~~~
+
+The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. Authenticated KEM is only possible when both parties contribute a PQC KEM public key and a traditional public key to the overall session key. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
 # Security Considerations
 
@@ -114,7 +126,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 ## JOSE Algorithms Registry 
 
-- Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-AES256GCM
+- Algorithm Name: HPKE-X25519Kyber768-SHA256-AES256GCM
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid 
   KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg, enc"
@@ -123,7 +135,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
-- Algorithm Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
+- Algorithm Name: HPKE-X25519Kyber768-SHA256-ChaCha20Poly1305
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid  
   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg, enc"
@@ -140,7 +152,7 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 *  Name: HPKE-Base-X25519Kyber768-SHA256-AES256GCM
 *  Value: TBD1 
-*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the  
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the  
    HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
@@ -148,7 +160,7 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 *  Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
 *  Value: TBD2
-*  Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid      
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid      
    KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
