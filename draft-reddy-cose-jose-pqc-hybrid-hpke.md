@@ -151,7 +151,7 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 *  Name: HPKE-Base-X25519MLKEM768-SHA256-AES256GCM
 *  Value: TBD1 
-*  Description: Cipher suite for COSE-HPKE that uses the X25519MLKEM768 Hybrid KEM, the  
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid KEM, the  
    HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
@@ -159,7 +159,7 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 *  Name: HPKE-Base-X25519MLKEM768-SHA256-ChaCha20Poly1305
 *  Value: TBD2
-*  Description: Cipher suite for COSE-HPKE that uses the X25519MLKEM768 Hybrid      
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid      
    KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
