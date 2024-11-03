@@ -48,9 +48,9 @@ normative:
 
 informative:
  
-  FIPS203-ipd:
+  FIPS203:
      title: "Module-Lattice-based Key-Encapsulation Mechanism Standard"
-     target: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.ipd.pdf
+     target: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
      date: false
   HPKE-IANA:
      author:
@@ -90,7 +90,7 @@ This document makes use of the terms defined in {{?I-D.ietf-pquip-pqt-hybrid-ter
 
 # Construction
 
-ML-KEM is a one-pass (store-and-forward) cryptographic mechanism for an originator to securely send keying material to a recipient using the recipient's ML-KEM public key. Three parameters sets for ML-KEMs are specified by {{FIPS203-ipd}}. In order of increasing security strength (and decreasing performance), these parameter sets
+ML-KEM is a one-pass (store-and-forward) cryptographic mechanism for an originator to securely send keying material to a recipient using the recipient's ML-KEM public key. Three parameters sets for ML-KEMs are specified by {{FIPS203}}. In order of increasing security strength (and decreasing performance), these parameter sets
 are ML-KEM-512, ML-KEM-768, and ML-KEM-1024. {{?I-D.connolly-cfrg-xwing-kem}} uses a multi-algorithm scheme,
 where one component algorithm is a post-quantum algorithm and another one is a traditional algorithm. The Combiner function defined in Section 5.3 of {{?I-D.connolly-cfrg-xwing-kem}} combines the output of a post-quantum KEM and a traditional KEM to generate a single shared secret.
 
@@ -98,8 +98,7 @@ where one component algorithm is a post-quantum algorithm and another one is a t
 
 This specification registers a number of PQ/T Hybrid KEMs for use with HPKE. A ciphersuite is thereby a combination of several algorithm configurations:
 
-- HPKE Mode
-- KEM algorithm (Traditional Algorithm + PQ KEM, for example, X25519Kyber768)
+- KEM algorithm (Traditional Algorithm + PQ KEM, for example, X25519MLKEM768)
 - KDF algorithm
 - AEAD algorithm
 
@@ -109,7 +108,7 @@ The "KEM", "KDF", and "AEAD" values are conceptually taken from the HPKE IANA re
 For readability the algorithm ciphersuites labels are built according to the following scheme:
 
 ~~~
-   HPKE-<Mode>-<KEM>-<KDF>-<AEAD>
+   HPKE-<KEM>-<KDF>-<AEAD>
 ~~~
 
 The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. Authenticated KEM is only possible when both parties contribute a PQC KEM public key and a traditional public key to the overall session key. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
@@ -126,8 +125,8 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 ## JOSE Algorithms Registry 
 
-- Algorithm Name: HPKE-X25519Kyber768-SHA256-AES256GCM
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid 
+- Algorithm Name: HPKE-X25519MLKEM768-SHA256-AES256GCM
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid 
   KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
@@ -135,8 +134,8 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
-- Algorithm Name: HPKE-X25519Kyber768-SHA256-ChaCha20Poly1305
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid  
+- Algorithm Name: HPKE-X25519MLKEM768-SHA256-ChaCha20Poly1305
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid  
   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg, enc"
 - JOSE Implementation Requirements: Optional
@@ -150,17 +149,17 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 ### COSE Algorithms Registry 
 
-*  Name: HPKE-Base-X25519Kyber768-SHA256-AES256GCM
+*  Name: HPKE-Base-X25519MLKEM768-SHA256-AES256GCM
 *  Value: TBD1 
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid KEM, the  
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid KEM, the  
    HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
 
-*  Name: HPKE-Base-X25519Kyber768-SHA256-ChaCha20Poly1305
+*  Name: HPKE-Base-X25519MLKEM768-SHA256-ChaCha20Poly1305
 *  Value: TBD2
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519Kyber768Draft00 Hybrid      
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid      
    KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
@@ -169,4 +168,4 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 # Acknowledgments
 {: numbered="false"}
 
-Thanks to Ilari Liusvaara for the discussion and comments.
+Thanks to Ilari Liusvaara and Orie Steele for the discussion and comments.
