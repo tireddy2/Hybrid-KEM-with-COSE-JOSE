@@ -113,6 +113,10 @@ For readability the algorithm ciphersuites labels are built according to the fol
 
 The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
+# Key Management
+
+In HPKE JWE Key Encryption, when encrypting for multiple recipients, the algorithms used to encrypt the Content Encryption Key (CEK) MUST individually support post-quantum algorithms. This requirement applies whether using a PQC KEM or a Hybrid PQ/T KEM. Ensuring post-quantum security mitigates the risks posed by quantum attacks, which would compromise traditional cryptographic schemes. This means that if one recipient requires a post-quantum algorithm (such as a PQC KEM or a PQ/T Hybrid KEM), traditional algorithms (such as ECDH-ES) MUST NOT be used for any recipient. This ensures that the entire encryption system maintains resilience against quantum attacks.
+
 # Security Considerations
 
 The security considerations in [I-D.connolly-cfrg-xwing-kem] are to be taken into account.
