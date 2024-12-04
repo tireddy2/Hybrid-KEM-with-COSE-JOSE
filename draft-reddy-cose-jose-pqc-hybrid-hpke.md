@@ -91,14 +91,14 @@ This document makes use of the terms defined in {{?I-D.ietf-pquip-pqt-hybrid-ter
 # Construction
 
 ML-KEM is a one-pass (store-and-forward) cryptographic mechanism for an originator to securely send keying material to a recipient using the recipient's ML-KEM public key. Three parameters sets for ML-KEMs are specified by {{FIPS203}}. In order of increasing security strength (and decreasing performance), these parameter sets
-are ML-KEM-512, ML-KEM-768, and ML-KEM-1024. {{?I-D.connolly-cfrg-xwing-kem}} uses a multi-algorithm scheme,
-where one component algorithm is a post-quantum algorithm and another one is a traditional algorithm. The Combiner function defined in Section 5.3 of {{?I-D.connolly-cfrg-xwing-kem}} combines the output of a post-quantum KEM and a traditional KEM to generate a single shared secret.
+are ML-KEM-512, ML-KEM-768, and ML-KEM-1024. X-Wing {{?I-D.connolly-cfrg-xwing-kem}} uses a multi-algorithm scheme,
+where one component algorithm is a post-quantum algorithm and another one is a traditional algorithm. X-Wing uses the final version of ML-KEM-768 and X25519. The Combiner function defined in Section 5.3 of {{?I-D.connolly-cfrg-xwing-kem}} combines the output of a post-quantum KEM and a traditional KEM to generate a single shared secret. 
 
 # Ciphersuite Registration
 
 This specification registers a number of PQ/T Hybrid KEMs for use with HPKE. A ciphersuite is thereby a combination of several algorithm configurations:
 
-- KEM algorithm (Traditional Algorithm + PQ KEM, for example, X25519MLKEM768)
+- KEM algorithm (PQ KEM + Traditional Algorithm,  for example, MLKEM768 + X25519 defined as "X-Wing" in {{?I-D.connolly-cfrg-xwing-kem}})
 - KDF algorithm
 - AEAD algorithm
 
@@ -111,9 +111,15 @@ For readability the algorithm ciphersuites labels are built according to the fol
    HPKE-<KEM>-<KDF>-<AEAD>
 ~~~
 
-The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. Authenticated KEM is only possible when both parties contribute a PQC KEM public key and a traditional public key to the overall session key. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
+The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
+
+# Key Management
+
+In HPKE JWE Key Encryption, when encrypting for multiple recipients, the algorithms used to encrypt the Content Encryption Key (CEK) MUST individually support post-quantum algorithms. This requirement applies whether using a PQC KEM or a Hybrid PQ/T KEM. Ensuring post-quantum security mitigates the risks posed by quantum attacks, which would compromise traditional cryptographic schemes. This means that if one recipient requires a post-quantum algorithm (such as a PQC KEM or a PQ/T Hybrid KEM), traditional algorithms (such as ECDH-ES) MUST NOT be used for any recipient. This ensures that the entire encryption system maintains resilience against quantum attacks.
 
 # Security Considerations
+
+The security considerations in [I-D.connolly-cfrg-xwing-kem] are to be taken into account.
 
 The shared secrets computed in the hybrid key exchange should be computed in a way that achieves the "hybrid" property: the resulting secret is secure as long as at least one of the component key exchange algorithms is unbroken. PQC KEMs used in the manner described in this document MUST explicitly be designed to be secure in the event that the public key is reused, such as achieving IND-CCA2 security. ML-KEM has such security properties.
 
@@ -123,25 +129,33 @@ The shared secrets computed in the hybrid key exchange should be computed in a w
 
 This document requests IANA to add new values to the "JSON Web Signature and Encryption Algorithms" registry.
 
-## JOSE Algorithms Registry 
+### JOSE Algorithms Registry 
 
-- Algorithm Name: HPKE-X25519MLKEM768-SHA256-AES256GCM
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid 
+- Algorithm Name: HPKE-XWING-SHA256-AES256GCM
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the XWING Hybrid 
   KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
-- Algorithm Usage Location(s): "alg, enc"
+- Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
-- Algorithm Name: HPKE-X25519MLKEM768-SHA256-ChaCha20Poly1305
-- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid  
+- Algorithm Name: HPKE-XWING-SHA256-ChaCha20Poly1305
+- Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the XWING Hybrid  
   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
-- Algorithm Usage Location(s): "alg, enc"
+- Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
+
+### JSON Web Key Elliptic Curves Registrations
+
+- Curve name: X-Wing
+- Curve description: X-Wing key pairs
+- JOSE Implementation Requirements: TBD
+- Change Controller: IESG
+- Reference: This Document
 
 ## COSE
 
@@ -149,21 +163,33 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 ### COSE Algorithms Registry 
 
-*  Name: HPKE-Base-X25519MLKEM768-SHA256-AES256GCM
+*  Name: HPKE-Base-XWING-SHA256-AES256GCM
 *  Value: TBD1 
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid KEM, the  
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the XWING Hybrid KEM, the  
    HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
 
-*  Name: HPKE-Base-X25519MLKEM768-SHA256-ChaCha20Poly1305
+*  Name: HPKE-Base-XWING-SHA256-ChaCha20Poly1305
 *  Value: TBD2
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the X25519MLKEM768 Hybrid      
+*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the XWING Hybrid      
    KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
 *  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
+
+### COSE Elliptic Curves Registrations
+
+This document requests IANA to register the following value in the "COSE Elliptic Curves" registry.
+
+*  Name: X-Wing
+*  Value: TBD
+*  Key type: OKP
+*  Description: X-Wing
+*  Change Controller: IESG
+*  Reference: This document
+*  Recommended: TBD
 
 # Acknowledgments
 {: numbered="false"}
