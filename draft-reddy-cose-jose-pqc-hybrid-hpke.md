@@ -115,7 +115,7 @@ The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Not
 
 # Key Management
 
-In HPKE JWE Key Encryption, when encrypting for multiple recipients, the algorithms used to encrypt the Content Encryption Key (CEK) MUST individually support post-quantum algorithms. This requirement applies whether using a PQC KEM or a Hybrid PQ/T KEM. Ensuring post-quantum security mitigates the risks posed by quantum attacks, which would compromise traditional cryptographic schemes. This means that if one recipient requires a post-quantum algorithm (such as a PQC KEM or a PQ/T Hybrid KEM), traditional algorithms (such as ECDH-ES) MUST NOT be used for any recipient. This ensures that the entire encryption system maintains resilience against quantum attacks.
+In HPKE JWE Key Encryption, when encrypting the Content Encryption Key (CEK) for multiple recipients, all recipients must use algorithms that support post-quantum cryptographic methods if any recipient requires post-quantum security. This applies to both PQC KEMs and Hybrid PQ/T KEMs. If one recipient uses a post-quantum algorithm, traditional algorithms (such as ECDH-ES) MUST NOT be used for any recipient. Allowing even one recipient to use a traditional algorithm while others use post-quantum algorithms would compromise the overall security of the system, as the traditional algorithm would remain vulnerable to quantum attacks. This requirement ensures that the encryption scheme is fully resistant to quantum threats across all recipients.
 
 # Security Considerations
 
