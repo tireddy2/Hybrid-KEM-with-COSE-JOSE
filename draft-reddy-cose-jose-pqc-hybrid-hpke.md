@@ -113,15 +113,15 @@ For readability the algorithm ciphersuites labels are built according to the fol
 
 The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
-# Key Management
-
-In HPKE JWE Key Encryption, when encrypting the Content Encryption Key (CEK) for multiple recipients, all recipients must use algorithms that support post-quantum cryptographic methods if any recipient requires post-quantum security. This applies to both PQC KEMs and Hybrid PQ/T KEMs. If one recipient uses a post-quantum algorithm, traditional algorithms (such as ECDH-ES) MUST NOT be used for any recipient. Allowing even one recipient to use a traditional algorithm while others use post-quantum algorithms would compromise the overall security of the system, as the traditional algorithm would remain vulnerable to quantum attacks. This requirement ensures that the encryption scheme is fully resistant to quantum threats across all recipients.
-
 # Security Considerations
 
 The security considerations in [I-D.connolly-cfrg-xwing-kem] are to be taken into account.
 
 The shared secrets computed in the hybrid key exchange should be computed in a way that achieves the "hybrid" property: the resulting secret is secure as long as at least one of the component key exchange algorithms is unbroken. PQC KEMs used in the manner described in this document MUST explicitly be designed to be secure in the event that the public key is reused, such as achieving IND-CCA2 security. ML-KEM has such security properties.
+
+## Post-Quantum Security for Multiple Recipients 
+
+In HPKE JWE Key Encryption, when encrypting the Content Encryption Key (CEK) for multiple recipients, it is crucial to consider the security requirements of the message to safeguard against "Harvest Now, Decrypt Later" attack. For messages requiring post-quantum security, all recipients MUST use algorithms supporting post-quantum cryptographic methods, such as PQC KEMs or Hybrid PQ/T KEMs. Using traditional algorithms (e.g., ECDH-ES) for any recipient in these scenarios compromises the overall security of the message.
 
 # IANA Considerations {#IANA}
 
