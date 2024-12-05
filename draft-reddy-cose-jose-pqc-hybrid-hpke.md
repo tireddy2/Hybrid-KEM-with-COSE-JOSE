@@ -72,7 +72,7 @@ The migration to Post-Quantum Cryptography (PQC) is unique in the history of mod
 
 During the transition from traditional to post-quantum algorithms, there is a desire or a requirement for protocols that use both algorithm types. Hybrid key exchange refers to using multiple key exchange algorithms simultaneously and combining the result with the goal of providing security even if all but one of the component algorithms is broken. It is motivated by transition to post-quantum cryptography. 
 
-HPKE offers a variant of public-key encryption of arbitrary-sized plaintexts for a recipient public key. The specifications for the use of HPKE with JOSE and COSE are described in {{?I-D.rha-jose-hpke-encrypt}} and {{?I-D.ietf-cose-hpke}}, respectively. HPKE can be extended to support PQ/T Hybrid KEM as defined in {{?I-D.connolly-cfrg-xwing-kem}}. This specification defines PQ/T Hybrid KEM in HPKE for use with JOSE and COSE. 
+HPKE offers a variant of public-key encryption of arbitrary-sized plaintexts for a recipient public key. The specifications for the use of HPKE with JOSE and COSE are described in {{?I-D.ietf-jose-hpke-encrypt}} and {{?I-D.ietf-cose-hpke}}, respectively. HPKE can be extended to support PQ/T Hybrid KEM as defined in {{?I-D.connolly-cfrg-xwing-kem}}. This specification defines PQ/T Hybrid KEM in HPKE for use with JOSE and COSE. 
 
 # Conventions and Definitions
 
@@ -115,7 +115,7 @@ The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Not
 
 # Security Considerations
 
-The security considerations in [I-D.connolly-cfrg-xwing-kem] are to be taken into account.
+The security considerations in {{?I-D.connolly-cfrg-xwing-kem}} and {{?I-D.ietf-jose-hpke-encrypt}} are to be taken into account.
 
 The shared secrets computed in the hybrid key exchange should be computed in a way that achieves the "hybrid" property: the resulting secret is secure as long as at least one of the component key exchange algorithms is unbroken. PQC KEMs used in the manner described in this document MUST explicitly be designed to be secure in the event that the public key is reused, such as achieving IND-CCA2 security. ML-KEM has such security properties.
 
