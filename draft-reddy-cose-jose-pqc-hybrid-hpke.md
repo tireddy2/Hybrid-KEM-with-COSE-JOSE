@@ -116,7 +116,7 @@ The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Not
 
 # AKP Key for X-Wing 
 
-This section describes the required parameters for an "AKP" key type, as defined in {{!I-D.ietf-cose-dilithium}}, and its use with the X-Wing algorithms, as defined in {{IANA}}. An example JWK is also provided for illustration.
+This section describes the required parameters for an "AKP" key type, as defined in {{!I-D.ietf-cose-dilithium}}, and its use with the X-Wing algorithms, as defined in {#XWING}. An example JWK is also provided for illustration.
 
 ### Required Parameters
 
@@ -126,13 +126,13 @@ A JSON Web Key (JWK) or COSE_Key with a key type ("kty") for use with the "X-Win
   The key type parameter MUST be present and set to "AKP".  
 
 - alg (Algorithm)  
-  The algorithm parameter MUST be present and it MUST represent the X-Wing algorithm, as defined in {{IANA}}.  
+  The algorithm parameter MUST be present and MUST represent the X-Wing algorithm, as defined in {#XWING}. X-Wing algorithms are those registered in the "JSON Web Signature and Encryption Algorithms" and "COSE Algorithms" registries, derived from the KEM identifier in the HPKE IANA registry.  
 
 - pub (Public Key)  
-  The public key parameter MUST be present and contain the public key material in a format defined by the "AKP" key type.  
+  The public key parameter MUST be present and MUST contain the X-Wing encapsulation key (pk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded.
 
 - priv (Private Key)  
-  The private key parameter MUST be present and contain the private key material in a format defined by the "AKP" key type.  
+  The private key parameter MUST be present and MUST contain the X-Wing decapsulation key (sk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded. 
 
 ### Example
 
@@ -140,10 +140,10 @@ The following is an example JWK representation of an "AKP" key for the "HPKE-XWI
 
 ~~~
 {
-    kty: "AKP", // Key Type, mandatory
-    alg: "HPKE-XWING-SHA256-AES256GCM", // Algorithm, mandatory
-    pub: "4iNrNajCSz...tmrrIzQSQQO9lNA", // Public Key, mandatory
-    priv: "f5wrpOiP...rPpm7yY" // Private Key, mandatory
+    "kty"  : "AKP", 
+    "alg"  : "HPKE-XWING-SHA256-AES256GCM", 
+    "pub"  : "4iNrNajCSz...tmrrIzQSQQO9lNA", 
+    "priv" : "f5wrpOiP...rPpm7yY" 
 }
 ~~~
 
