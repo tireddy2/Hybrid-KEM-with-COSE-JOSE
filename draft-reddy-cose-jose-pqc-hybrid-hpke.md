@@ -132,7 +132,7 @@ A JSON Web Key (JWK) or COSE_Key with a key type ("kty") for use with the "X-Win
   The public key parameter MUST be present and MUST contain the X-Wing encapsulation key (pk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded.
 
 - priv (Private Key)  
-  The private key parameter MUST be present and MUST contain the X-Wing decapsulation key (sk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded. 
+  When representing an X-Wing private key, the private key parameter MUST be present and MUST contain the X-Wing decapsulation key (sk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded. 
 
 ### Example
 
