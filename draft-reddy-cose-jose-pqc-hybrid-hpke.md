@@ -113,6 +113,40 @@ For readability the algorithm ciphersuites labels are built according to the fol
 
 The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
+
+# AKP Key for X-Wing 
+
+This section describes the required parameters for an "AKP" key type, as defined in {{!I-D.ietf-cose-dilithium}}, and its use with the X-Wing algorithms, as defined in {#XWING}. An example JWK is also provided for illustration.
+
+### Required Parameters
+
+A JSON Web Key (JWK) or COSE_Key with a key type ("kty") for use with the "X-Wing" algorithm includes the following parameters:
+
+- kty (Key Type)  
+  The key type parameter MUST be present and set to "AKP".  
+
+- alg (Algorithm)  
+  The algorithm parameter MUST be present and MUST represent the X-Wing algorithm, as defined in {#XWING}. X-Wing algorithms are those registered in the "JSON Web Signature and Encryption Algorithms" and "COSE Algorithms" registries, derived from the KEM identifier in the HPKE IANA registry.  
+
+- pub (Public Key)  
+  The public key parameter MUST be present and MUST contain the X-Wing encapsulation key (pk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded.
+
+- priv (Private Key)  
+  When representing an X-Wing private key, the private key parameter MUST be present and MUST contain the X-Wing decapsulation key (sk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded. 
+
+### Example
+
+The following is an example JWK representation of an "AKP" private key for the "HPKE-XWING-SHA256-AES256GCM" algorithm:
+
+~~~
+{
+    "kty"  : "AKP", 
+    "alg"  : "HPKE-XWING-SHA256-AES256GCM", 
+    "pub"  : "4iNrNajCSz...tmrrIzQSQQO9lNA", 
+    "priv" : "f5wrpOiP...rPpm7yY" 
+}
+~~~
+
 # Security Considerations
 
 The security considerations in {{?I-D.connolly-cfrg-xwing-kem}} and {{?I-D.ietf-jose-hpke-encrypt}} are to be taken into account.
@@ -129,7 +163,7 @@ In HPKE JWE Key Encryption, when encrypting the Content Encryption Key (CEK) for
 
 This document requests IANA to add new values to the "JSON Web Signature and Encryption Algorithms" registry.
 
-### JOSE Algorithms Registry 
+### JOSE Algorithms Registry {#XWING}
 
 - Algorithm Name: HPKE-XWING-SHA256-AES256GCM
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the XWING Hybrid 
@@ -148,14 +182,6 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
-
-### JSON Web Key Elliptic Curves Registrations
-
-- Curve name: X-Wing
-- Curve description: X-Wing key pairs
-- JOSE Implementation Requirements: TBD
-- Change Controller: IESG
-- Reference: This Document
 
 ## COSE
 
@@ -178,18 +204,6 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 *  Capabilities: [kty]
 *  Change Controller: IANA
 *  Reference: [[TBD: This RFC]]
-
-### COSE Elliptic Curves Registrations
-
-This document requests IANA to register the following value in the "COSE Elliptic Curves" registry.
-
-*  Name: X-Wing
-*  Value: TBD
-*  Key type: OKP
-*  Description: X-Wing
-*  Change Controller: IESG
-*  Reference: This document
-*  Recommended: TBD
 
 # Acknowledgments
 {: numbered="false"}
