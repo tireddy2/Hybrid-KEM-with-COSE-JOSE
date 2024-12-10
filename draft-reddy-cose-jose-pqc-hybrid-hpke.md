@@ -136,7 +136,7 @@ A JSON Web Key (JWK) or COSE_Key with a key type ("kty") for use with the "X-Win
 
 ### Example
 
-The following is an example JWK representation of an "AKP" key for the "HPKE-XWING-SHA256-AES256GCM" algorithm:
+The following is an example JWK representation of an "AKP" private key for the "HPKE-XWING-SHA256-AES256GCM" algorithm:
 
 ~~~
 {
