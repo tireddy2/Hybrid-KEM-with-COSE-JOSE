@@ -104,13 +104,6 @@ This specification registers a number of PQ/T Hybrid KEMs for use with HPKE. A c
 
 The "KEM", "KDF", and "AEAD" values are conceptually taken from the HPKE IANA registry {{HPKE-IANA}}. Hence, JOSE and COSE cannot use an algorithm combination that is not already available with HPKE.
 
-
-For readability the algorithm ciphersuites labels are built according to the following scheme:
-
-~~~
-   HPKE-<KEM>-<KDF>-<AEAD>
-~~~
-
 The HPKE PQ/T hybrid ciphersuites for JOSE and COSE are defined in {{IANA}}. Note that the PQ/T Hybrid KEM in HPKE is not an authenticated KEM. The HPKE Base mode can only be supported with the PQ/T Hybrid KEM.
 
 
@@ -141,7 +134,7 @@ The following is an example JWK representation of an "AKP" private key for the "
 ~~~
 {
     "kty"  : "AKP", 
-    "alg"  : "HPKE-XWING-SHA256-AES256GCM", 
+    "alg"  : "HPKE-7", 
     "pub"  : "4iNrNajCSz...tmrrIzQSQQO9lNA", 
     "priv" : "f5wrpOiP...rPpm7yY" 
 }
@@ -165,7 +158,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 ### JOSE Algorithms Registry {#XWING}
 
-- Algorithm Name: HPKE-XWING-SHA256-AES256GCM
+- Algorithm Name: HPKE-7
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the XWING Hybrid 
   KEM, the HKDF-SHA256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
@@ -174,7 +167,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Specification Document(s): [[TBD: This RFC]]
 - Algorithm Analysis Documents(s): TODO
 
-- Algorithm Name: HPKE-XWING-SHA256-ChaCha20Poly1305
+- Algorithm Name: HPKE-8
 - Algorithm Description: Cipher suite for JOSE-HPKE in Base Mode that uses the XWING Hybrid  
   KEM, the HKDF-SHA256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
