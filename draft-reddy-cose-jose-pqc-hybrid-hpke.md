@@ -1,6 +1,6 @@
 ---
-title: "PQ/T Hybrid KEM: HPKE with JOSE/COSE"
-abbrev: "PQ/T Hybrid KEM: HPKE with JOSE/COSE"
+title: "Post-Quantum and Hybrid KEMs for HPKE with JOSE and COSE"
+abbrev: "PQC & PQ/T Hybrid KEMs for HPKE (JOSE/COSE)"
 category: std
 
 docname: draft-reddy-cose-jose-pqc-hybrid-hpke
