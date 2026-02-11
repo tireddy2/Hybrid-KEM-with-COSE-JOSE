@@ -76,7 +76,7 @@ During this transition, deployments may adopt different strategies depending on 
 
 However, pure PQC key exchange may be required for specific deployments with regulatory or compliance mandates that necessitate the exclusive use of post-quantum cryptography. Such requirements may arise in environments governed by stringent cryptographic standards that prohibit reliance on traditional public-key algorithms.
 
-Hybrid Public Key Encryption (HPKE) specifies a scheme for encrypting arbitrary-length plaintexts to a recipient’s public key. The use of HPKE with JOSE and COSE is specified in {{?I-D.ietf-jose-hpke-encrypt}} and {{?I-D.ietf-cose-hpke}}, respectively. HPKE can be extended to support both pure PQC and post-quantum/traditional (PQ/T) hybrid Key Encapsulation Mechanisms (KEMs), as defined in {{?I-D.ietf-hpke-pq}}. This document specifies the use of these KEMs in HPKE for JOSE and COSE.
+Hybrid Public Key Encryption (HPKE) specifies a scheme for encrypting arbitrary-length plaintexts to a recipient’s public key. The use of HPKE with JOSE and COSE is specified in {{!I-D.ietf-jose-hpke-encrypt}} and {{!I-D.ietf-cose-hpke}}, respectively. HPKE can be extended to support both pure PQC and post-quantum/traditional (PQ/T) hybrid Key Encapsulation Mechanisms (KEMs), as defined in {{!I-D.ietf-hpke-pq}}. This document specifies the use of these KEMs in HPKE for JOSE and COSE.
 
 Supporting both pure PQC and PQ/T hybrid KEMs enables flexible deployment choices: hybrid mechanisms provide a conservative transition strategy with defense in depth, while pure PQC mechanisms accommodate deployments with regulatory, compliance, or policy-driven requirements for exclusive use of PQC.
 
@@ -99,13 +99,13 @@ This document makes use of the terms defined in {{?I-D.ietf-pquip-pqt-hybrid-ter
 ML-KEM is a one-pass (store-and-forward) cryptographic mechanism for an originator to securely send keying material to a recipient using the recipient's ML-KEM public key. Three parameter sets for ML-KEMs are specified by {{FIPS203}}. In order of increasing security strength (and decreasing performance), these parameter sets
 are ML-KEM-512, ML-KEM-768, and ML-KEM-1024. For pure PQC, the ML-KEM algorithms are used as standalone KEMs within the HPKE framework as defined in {{?I-D.ietf-hpke-pq}}. 
 
-While this document defines ciphersuites for all three parameter sets, implementers should follow the guidance in Section 3 of {{?I-D.ietf-hpke-pq}} regarding the selection of security levels. Specifically, it is noted that while ML-KEM-512 provides NIST security category 1, the use of ML-KEM-768 or ML-KEM-1024 is generally preferred to provide a higher security margin against potential future cryptanalysis
+While this document defines ciphersuites for all three parameter sets, implementers should follow the guidance in Section 3 of {{?I-D.ietf-hpke-pq}} regarding the selection of security levels. Specifically, it is noted that while ML-KEM-512 provides NIST security category 1, the use of ML-KEM-768 or ML-KEM-1024 is generally preferred to provide a higher security margin against potential future cryptanalysis.
 
-PQ/T algorithms for HPKE {{?I-D.ietf-hpke-pq}} use a multi-algorithm scheme, where one component algorithm is a post-quantum algorithm and another one is a traditional algorithm. The hybrid combiner construction, such as the C2PRICombiner defined in {{?I-D.irtf-cfrg-hybrid-kems}}, combines the shared secrets and public values from a post-quantum KEM and a traditional KEM to derive a single shared secret for HPKE.
+PQ/T algorithms for HPKE {{!I-D.ietf-hpke-pq}} use a multi-algorithm scheme, where one component algorithm is a post-quantum algorithm and another one is a traditional algorithm. The hybrid combiner construction, such as the C2PRICombiner defined in {{!I-D.irtf-cfrg-hybrid-kems}}, combines the shared secrets and public values from a post-quantum KEM and a traditional KEM to derive a single shared secret for HPKE.
 
 # Alignment with JOSE HPKE Modes
 
-The JOSE HPKE specification {{?I-D.ietf-jose-hpke-encrypt}} and the COSE HPKE specification {{?I-D.ietf-cose-hpke}} define the use of HPKE with two Key Management Modes:
+The JOSE HPKE specification {{!I-D.ietf-jose-hpke-encrypt}} and the COSE HPKE specification {{!I-D.ietf-cose-hpke}} define the use of HPKE with two Key Management Modes:
 
 * Key Encryption, and
 * Integrated Encryption.
@@ -134,7 +134,7 @@ The HPKE ciphersuites defined for use with JOSE and COSE, including both pure PQ
 
 Note that the pure PQC and PQ/T hybrid KEMs defined for HPKE are not authenticated KEMs. As a result, only the HPKE Base mode is supported when using these KEMs, in accordance with the HPKE and JOSE/COSE HPKE specifications.
 
-# AKP Key for Pure PQC and PQ/T Hybrid Algorithms in HPKE
+# AKP Key Type for Use with PQC and PQ/T Hybrid HPKE Algorithms
 
 This section describes the required parameters for an "AKP" key type, as
 defined in {{!I-D.ietf-cose-dilithium}}, and its use with pure PQC
@@ -160,13 +160,18 @@ or PQ/T hybrid algorithms for HPKE includes the following parameters:
 - pub (Public Key)  
   The `pub` parameter MUST be present and MUST contain the public
   encapsulation key (`pk`) as defined in Section 5.1 of
-  {{?I-D.irtf-cfrg-hybrid-kems}}.  
+  {{!I-D.irtf-cfrg-hybrid-kems}}. For hybrid KEMs, the PQC KEM public key 
+  MUST be placed first, followed immediately by the traditional public key, 
+  as specified in {{?I-D.ietf-hpke-pq}}. No padding or delimiters are used 
+  between the keys.
+
   When represented as a JWK, this value MUST be base64url-encoded.
 
 - priv (Private Key)  
   When representing a private key, the `priv` parameter MUST be present
   and MUST contain the private decapsulation key (`sk`) as defined in
-  Section 5.1 of {{?I-D.irtf-cfrg-hybrid-kems}}.  
+  Section 5.1 of {{!I-D.irtf-cfrg-hybrid-kems}}. For hybrid KEMs, the PQC 
+  KEM private key MUST be placed first, followed immediately by the traditional private key.  
   When represented as a JWK, this value MUST be base64url-encoded.
 
 
@@ -177,7 +182,7 @@ The following is an example JWK representation of an "AKP" key for the "MLKEM768
 ~~~
 {
     "kty"  : "AKP", 
-    "alg"  : "HPKE-7", 
+    "alg"  : "HPKE-8", 
     "pub"  : "4iNrNajCSz...tmrrIzQSQQO9lNA", 
     "priv" : "f5wrpOiP...rPpm7yY" 
 }
@@ -185,9 +190,9 @@ The following is an example JWK representation of an "AKP" key for the "MLKEM768
 
 # Security Considerations
 
-The security considerations in {{?I-D.ietf-hpke-pq}}, {{?I-D.ietf-jose-hpke-encrypt}} and {{?I-D.ietf-cose-hpke}} are to be taken into account.
+The security considerations in {{!I-D.ietf-hpke-pq}}, {{!I-D.ietf-jose-hpke-encrypt}} and {{!I-D.ietf-cose-hpke}} are to be taken into account.
 
-The shared secrets computed in the hybrid key exchange should be computed in a way that achieves the "hybrid" property: the resulting secret is secure as long as at least one of the component key exchange algorithms is unbroken. PQC KEMs used in the manner described in this document MUST explicitly be designed to be secure in the event that the public key is reused, such as achieving IND-CCA2 security.  ML-KEM has such security properties.
+The shared secrets computed in the hybrid key exchange must be computed in a way that achieves the "hybrid" property: the resulting secret is secure as long as at least one of the component key exchange algorithms is unbroken. PQC KEMs used in the manner described in this document MUST explicitly be designed to be secure in the event that the public key is reused, such as achieving IND-CCA2 security.ML-KEM has such security properties.
 
 ## Post-Quantum Security for Multiple Recipients 
 
@@ -201,16 +206,8 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 ### JOSE Algorithms for Integrated Encryption {#XWING}
 
-- Algorithm Name: HPKE-7
-- Algorithm Description: Integrated Encryption with HPKE that uses the P-256 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
-- Algorithm Usage Location(s): "alg"
-- JOSE Implementation Requirements: Optional
-- Change Controller: IANA
-- Specification Document(s): [[TBD: This RFC]]
-- Algorithm Analysis Documents(s): TODO
-
 - Algorithm Name: HPKE-8
-- Algorithm Description: Integrated Encryption with HPKE that uses the P-256 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -218,7 +215,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-9
-- Algorithm Description: Integrated Encryption with HPKE that uses the X25519 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -226,7 +223,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-10
-- Algorithm Description: Integrated Encryption with HPKE that uses the X25519 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -234,7 +231,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-11
-- Algorithm Description: Integrated Encryption with HPKE that uses the P-384 + ML-KEM-1024 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -242,7 +239,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-12
-- Algorithm Description: Integrated Encryption with HPKE that uses the P-384 + ML-KEM-1024 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -250,15 +247,15 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-13
-- Algorithm Description: Integrated Encryption with HPKE that uses the ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
 - Specification Document(s): [[TBD: This RFC]]
-- Algorithm Analysis Document(s): TODO
+- Algorithm Analysis Documents(s): TODO
 
 - Algorithm Name: HPKE-14
-- Algorithm Description: Integrated Encryption with HPKE that uses the ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -266,7 +263,15 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-15
-- Algorithm Description: Integrated Encryption with HPKE that uses the ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Usage Location(s): "alg"
+- JOSE Implementation Requirements: Optional
+- Change Controller: IANA
+- Specification Document(s): [[TBD: This RFC]]
+- Algorithm Analysis Document(s): TODO
+
+- Algorithm Name: HPKE-16
+- Algorithm Description: Integrated Encryption with HPKE using ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -275,16 +280,8 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 
 ### JOSE Algorithms for Key Encryption {#XWING-KE}
 
-- Algorithm Name: HPKE-7-KE
-- Algorithm Description: Key Encryption with HPKE that uses the P-256 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
-- Algorithm Usage Location(s): "alg"
-- JOSE Implementation Requirements: Optional
-- Change Controller: IANA
-- Specification Document(s): [[TBD: This RFC]]
-- Algorithm Analysis Document(s): TODO
-
 - Algorithm Name: HPKE-8-KE
-- Algorithm Description: Key Encryption with HPKE that uses the P-256 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -292,7 +289,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-9-KE
-- Algorithm Description: Key Encryption with HPKE that uses the X25519 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -300,7 +297,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-10-KE
-- Algorithm Description: Key Encryption with HPKE that uses the X25519 + ML-KEM-768 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -308,7 +305,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-11-KE
-- Algorithm Description: Key Encryption with HPKE that uses the P-384 + ML-KEM-1024 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -316,7 +313,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-12-KE
-- Algorithm Description: Key Encryption with HPKE that uses the P-384 + ML-KEM-1024 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -324,7 +321,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-13-KE
-- Algorithm Description: Key Encryption with HPKE that uses the ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -332,7 +329,7 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-14-KE
-- Algorithm Description: Key Encryption with HPKE that uses the ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -340,7 +337,15 @@ This document requests IANA to add new values to the "JSON Web Signature and Enc
 - Algorithm Analysis Document(s): TODO
 
 - Algorithm Name: HPKE-15-KE
-- Algorithm Description: Key Encryption with HPKE that uses the ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+- Algorithm Usage Location(s): "alg"
+- JOSE Implementation Requirements: Optional
+- Change Controller: IANA
+- Specification Document(s): [[TBD: This RFC]]
+- Algorithm Analysis Document(s): TODO
+
+- Algorithm Name: HPKE-16-KE
+- Algorithm Description: Key Encryption with HPKE using ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 - Algorithm Usage Location(s): "alg"
 - JOSE Implementation Requirements: Optional
 - Change Controller: IANA
@@ -353,68 +358,149 @@ This document requests IANA to add new values to the 'COSE Algorithms' registry.
 
 ### COSE Algorithms Registry 
 
-*  Name: MLKEM768-P256-SHAKE256-AES-256-GCM
+*  Name: HPKE-8
 *  Value: TBD1 
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-*  Name: MLKEM768-P256-SHAKE256-ChaCha20Poly1305
+*  Name: HPKE-9
 *  Value: TBD2
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-*  Name: MLKEM768-X25519-SHAKE256-AES-256-GCM
+*  Name: HPKE-10
 *  Value: TBD3
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-*  Name: MLKEM768-X25519-SHAKE256-ChaCha20Poly1305
+*  Name: HPKE-11
 *  Value: TBD4
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-*  Name: MLKEM1024-P384-SHAKE256-AES-256-GCM
+*  Name: HPKE-12
 *  Value: TBD5 
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-*  Name: MLKEM1024-P384-SHAKE256-ChaCha20Poly1305
+*  Name: HPKE-13
 *  Value: TBD6
-*  Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Description: COSE HPKE Integrated Encryption using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
 *  Capabilities: [kty]
-*  Change Controller: IANA
+*  Change Controller: IESG
 *  Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-* Name: MLKEM512-SHAKE256-AES-128-GCM
+* Name: HPKE-14
 * Value: TBD7
-* Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
+* Description: COSE HPKE Integrated Encryption using ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
 * Capabilities: [kty]
-* Change Controller: IANA
+* Change Controller: IESG
 * Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-* Name: MLKEM768-SHAKE256-AES-256-GCM
+* Name: HPKE-15
 * Value: TBD8
-* Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+* Description: COSE HPKE Integrated Encryption using ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 * Capabilities: [kty]
-* Change Controller: IANA
+* Change Controller: IESG
 * Reference: [[TBD: This RFC]]
+*  Recommended: No
 
-* Name: MLKEM1024-SHAKE256-AES-256-GCM
+* Name: HPKE-16
 * Value: TBD9
-* Description: Cipher suite for COSE-HPKE in Base Mode that uses the ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+* Description: COSE HPKE Integrated Encryption using ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
 * Capabilities: [kty]
-* Change Controller: IANA
+* Change Controller: IESG
 * Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-8-KE
+*  Value: TBD10 
+*  Description: COSE HPKE Key Encryption using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-9-KE
+*  Value: TBD11
+*  Description: COSE HPKE Key Encryption using ML-KEM-768 + P-256 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-10-KE
+*  Value: TBD12
+*  Description: COSE HPKE Key Encryption using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-11-KE
+*  Value: TBD13
+*  Description: COSE HPKE Key Encryption using ML-KEM-768 + X25519 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-12-KE
+*  Value: TBD14
+*  Description: COSE HPKE Key Encryption using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+*  Name: HPKE-13-KE
+*  Value: TBD15
+*  Description: COSE HPKE Key Encryption using ML-KEM-1024 + P-384 Hybrid KEM, the SHAKE256 KDF, and the ChaCha20Poly1305 AEAD.
+*  Capabilities: [kty]
+*  Change Controller: IESG
+*  Reference: [[TBD: This RFC]]
+*  Recommended: No
+
+* Name: HPKE-14-KE
+* Value: TBD16
+* Description: COSE HPKE Key Encryption using ML-KEM-512 KEM, the SHAKE256 KDF, and the AES-128-GCM AEAD.
+* Capabilities: [kty]
+* Change Controller: IESG
+* Reference: [[TBD: This RFC]]
+* Recommended: No
+
+* Name: HPKE-15-KE
+* Value: TBD17
+* Description: COSE HPKE Key Encryption using ML-KEM-768 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+* Capabilities: [kty]
+* Change Controller: IESG
+* Reference: [[TBD: This RFC]]
+* Recommended: No
+
+* Name: HPKE-16-KE
+* Value: TBD18
+* Description: COSE HPKE Key Encryption using ML-KEM-1024 KEM, the SHAKE256 KDF, and the AES-256-GCM AEAD.
+* Capabilities: [kty]
+* Change Controller: IESG
+* Reference: [[TBD: This RFC]]
+* Recommended: No
 
 # Acknowledgments
 {: numbered="false"}
