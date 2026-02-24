@@ -64,7 +64,7 @@ informative:
      
 --- abstract
 
-This document specifies the use of Post-Quantum (PQ) and Post-Quantum/Traditional (PQ/T) Hybrid Key Encapsulation Mechanisms (KEMs) within the Hybrid Public Key Encryption (HPKE) for JOSE and COSE. It defines algorithm identifiers and key formats to support pure post-quantum algorithms (ML-KEM) and their PQ/T hybrid combinations.
+This document specifies the use of Post-Quantum (PQC) and Post-Quantum/Traditional (PQ/T) Hybrid Key Encapsulation Mechanisms (KEMs) within the Hybrid Public Key Encryption (HPKE) for JOSE and COSE. It defines algorithm identifiers and key formats to support pure post-quantum algorithms (ML-KEM) and their PQ/T hybrid combinations.
 
 --- middle
 
@@ -187,6 +187,44 @@ The following is an example JWK representation of an "AKP" key for the "MLKEM768
     "priv" : "f5wrpOiP...rPpm7yY" 
 }
 ~~~
+
+# Security Strength Analysis of Registered HPKE Ciphersuites
+
+This section provides an analysis of the security strength of the HPKE ciphersuites defined in this document.
+
+~~~
++----------+--------+------------+-----------+-----------+-------------------+--------------+
+| Alg      | Mode   | KEM        | Trad      | KDF       | AEAD              | Sec          |
++----------+--------+------------+-----------+-----------+-------------------+--------------+
+| HPKE-8   | Hybrid | MLKEM-768  | P-256     | SHAKE256  | AES-256-GCM       | Level 3/C128 |
+| HPKE-9   | Hybrid | MLKEM-768  | P-256     | SHAKE256  | ChaCha20-Poly1305 | Level 3/C128 |
+| HPKE-10  | Hybrid | MLKEM-768  | X25519    | SHAKE256  | AES-256-GCM       | Level 3/C128 |
+| HPKE-11  | Hybrid | MLKEM-768  | X25519    | SHAKE256  | ChaCha20-Poly1305 | Level 3/C128 |
+| HPKE-12  | Hybrid | MLKEM-1024 | P-384     | SHAKE256  | AES-256-GCM       | Level 5/C192 |
+| HPKE-13  | Hybrid | MLKEM-1024 | P-384     | SHAKE256  | ChaCha20-Poly1305 | Level 5/C192 |
+| HPKE-14  | Level  | MLKEM-512  | -         | SHAKE256  | AES-128-GCM       | Level 1      |
+| HPKE-15  | Level  | MLKEM-768  | -         | SHAKE256  | AES-256-GCM       | Level 3      |
+| HPKE-16  | Level  | MLKEM-1024 | -         | SHAKE256  | AES-256-GCM       | Level 5      |
++----------+--------+------------+-----------+-----------+-------------------+--------------+
+~~~
+
+* Level x = NIST post-quantum security level
+
+* Cyyy = Approximate classical security strength in bits for traditional algorithms.
+
+* Hybrid classical strength is bounded by the traditional component
+
+* -KE variants share identical cryptographic properties and are omitted
+
+NIST post-quantum security Levels 1, 3, and 5 are defined by reference to the classical cost of breaking AES-128, AES-192, and AES-256, respectively. These levels apply to post-quantum algorithm targets and do not constitute classifications of the AES primitive itself.
+
+KDF Selection: SHAKE256 is selected as the HPKE KDF to align with the SHAKE-based extendable-output functions (XOFs) used internally by ML-KEM. This avoids introducing an additional hash primitive into the cryptographic processing pipeline. The security capacity of SHAKE256 is sufficient to support NIST security levels 1, 3, and 5 without introducing a bottleneck in key derivation. This choice does not imply that alternative KDFs are cryptographically incompatible with ML-KEM; rather, using the same hash family reduces the number of distinct cryptographic primitives that implementations must support.
+
+AEAD Selection: AES-128-GCM provides approximately 128-bit symmetric security strength and is sufficient for Level 3 constructions. As discussed in Section 3.1 of {{?I-D.ietf-pquip-pqc-engineers}}, symmetric cryptography such as AES remains secure in a post-quantum setting, and 128-bit symmetric algorithms are considered quantum-safe for the foreseeable future.
+
+Nevertheless, this specification mandates AES-256-GCM for all Level 3 ciphersuites to maintain consistent symmetric key sizing across higher-strength suites and to avoid introducing AES-128 into Level 3 configurations. Because the HPKE AEAD registry does not define an identifier for AES-192-GCM, AES-256-GCM is selected as the stronger available AEAD option. AES-128-GCM, used in HPKE-14, limits the symmetric security strength to approximately 128 bits, which is consistent with ML-KEM-512 (Level 1).
+
+PQ/T Hybrid: ML-KEM-1024 is paired with P-384 rather than P-521. While P-521 offers higher classical security strength, P-384 already provides a strong classical fallback (192-bit security), is widely implemented, and aligns with existing TLS PQ/T hybrid construction. 
 
 # Security Considerations
 
