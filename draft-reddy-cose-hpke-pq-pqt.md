@@ -42,10 +42,6 @@ author:
     fullname: Filip Skokan
     organization: Okta
     email: panva.ip@gmail.com
- -
-    fullname: Brian Campbell
-    organization: Ping Identity
-    email: bcampbell@pingidentity.com
 
 normative:
   I-D.ietf-cose-hpke:
@@ -731,4 +727,4 @@ draft-reddy-cose-hpke-pq-pqt-00
 - Replaces draft-reddy-cose-jose-pqc-hybrid-hpke
 - Removed ChaCha20Poly1305 AEAD ciphersuites
 - Adapted source from draft-skokan-jose-hpke-pq-pqt-04 for COSE
-- Added Filip Skokan and Brian Campbell as authors
+- Added Filip Skokan as author
