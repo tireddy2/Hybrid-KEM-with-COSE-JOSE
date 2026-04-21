@@ -8,8 +8,6 @@ Intended status: Standards Track                           H. Tschofenig
 Expires: 23 October 2026                                        UniBw M.
                                                                F. Skokan
                                                                     Okta
-                                                             B. Campbell
-                                                           Ping Identity
                                                            21 April 2026
 
 
@@ -1059,7 +1057,7 @@ Document History
 
    *  Adapted source from draft-skokan-jose-hpke-pq-pqt-04 for COSE
 
-   *  Added Filip Skokan and Brian Campbell as authors
+   *  Added Filip Skokan as author
 
 Authors' Addresses
 
@@ -1076,8 +1074,3 @@ Authors' Addresses
    Filip Skokan
    Okta
    Email: panva.ip@gmail.com
-
-
-   Brian Campbell
-   Ping Identity
-   Email: bcampbell@pingidentity.com
