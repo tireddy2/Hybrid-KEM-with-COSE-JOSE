@@ -1,0 +1,12 @@
+{
+  "name": "draft-cose-hpke-pq-pqt",
+  "type": "module",
+  "engines": {
+    "node": ">=24.7.0"
+  },
+  "dependencies": {},
+  "scripts": {
+    "update": "npx --yes github:panva/draft-jose-hpke-pq-pqt#update-post-alignment draft-reddy-cose-hpke-pq-pqt.md",
+    "force-update": "npm run update -- --force"
+  }
+}
