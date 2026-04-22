@@ -42,10 +42,6 @@ author:
     fullname: Filip Skokan
     organization: Okta
     email: panva.ip@gmail.com
- -
-    fullname: Brian Campbell
-    organization: Ping Identity
-    email: bcampbell@pingidentity.com
 
 normative:
   I-D.ietf-cose-hpke:
@@ -251,8 +247,8 @@ When the Key Encryption algorithms defined in
 {{cose-pqt-hybrid-key-encryption-table}} or {{cose-pure-pq-key-encryption-table}}
 are used in a COSE_Encrypt structure with multiple COSE_Recipient entries,
 all recipients MUST use a quantum-resistant Key Management algorithm.
-Including a recipient that uses a quantum-susceptible algorithm would
-allow an adversary performing an HNDL attack to recover the Content
+Including a recipient that uses an algorithm that is not quantum-resistant
+would allow an adversary performing an HNDL attack to recover the Content
 Encryption Key once a CRQC becomes available; see
 {{Section 15.4 of I-D.ietf-pquip-pqc-engineers}}.
 
