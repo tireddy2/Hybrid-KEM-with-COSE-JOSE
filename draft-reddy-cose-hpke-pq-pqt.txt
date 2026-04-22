@@ -8,6 +8,8 @@ Intended status: Standards Track                           H. Tschofenig
 Expires: 24 October 2026                                        UniBw M.
                                                                F. Skokan
                                                                     Okta
+                                                             B. Campbell
+                                                           Ping Identity
                                                            22 April 2026
 
 
@@ -1074,3 +1076,8 @@ Authors' Addresses
    Filip Skokan
    Okta
    Email: panva.ip@gmail.com
+
+
+   Brian Campbell
+   Ping Identity
+   Email: bcampbell@pingidentity.com
