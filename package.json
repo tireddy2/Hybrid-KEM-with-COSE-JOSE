@@ -6,7 +6,7 @@
   },
   "dependencies": {},
   "scripts": {
-    "update": "npx --yes github:panva/draft-jose-hpke-pq-pqt#update-post-alignment draft-reddy-cose-hpke-pq-pqt.md",
+    "update": "npx --yes github:panva/draft-jose-hpke-pq-pqt draft-reddy-cose-hpke-pq-pqt.md",
     "force-update": "npm run update -- --force"
   }
 }
