@@ -4,16 +4,16 @@
 
 This is the working area for the individual Internet-Draft, "COSE HPKE PQ &amp; PQ/T Algorithm Registrations".
 
-* [Editor's Copy](https://tireddy2.github.io/Hybrid-KEM-with-COSE-JOSE/#go.draft-reddy-cose-hpke-pq-pqt.html)
+* [Editor's Copy](https://tireddy2.github.io/cose-hpke-pqt-pqc/#go.draft-reddy-cose-hpke-pq-pqt.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-reddy-cose-hpke-pq-pqt)
 * [Individual Draft](https://datatracker.ietf.org/doc/html/draft-reddy-cose-hpke-pq-pqt)
-* [Compare Editor's Copy to Individual Draft](https://tireddy2.github.io/Hybrid-KEM-with-COSE-JOSE/#go.draft-reddy-cose-hpke-pq-pqt.diff)
+* [Compare Editor's Copy to Individual Draft](https://tireddy2.github.io/cose-hpke-pqt-pqc/#go.draft-reddy-cose-hpke-pq-pqt.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/tireddy2/Hybrid-KEM-with-COSE-JOSE/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/tireddy2/cose-hpke-pqt-pqc/blob/main/CONTRIBUTING.md).
 
 The contributing file also has tips on how to make contributions, if you
 don't already know how to do that.

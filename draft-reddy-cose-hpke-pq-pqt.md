@@ -25,8 +25,8 @@ venue:
   type: "Working Group"
   mail: "cose@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/cose/"
-  github: "tireddy2/Hybrid-KEM-with-COSE-JOSE"
-  latest: "https://tireddy2.github.io/Hybrid-KEM-with-COSE-JOSE/draft-reddy-cose-hpke-pq-pqt.html"
+  github: "tireddy2/cose-hpke-pqt-pqc"
+  latest: "https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-pq-pqt.html"
 
 author:
  -

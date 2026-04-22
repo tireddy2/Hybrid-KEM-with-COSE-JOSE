@@ -64,7 +64,7 @@ jobs:
 
           - [draft-reddy-cose-hpke-pq-pqt.html](${{ steps.preview.outputs.preview-url }}draft-reddy-cose-hpke-pq-pqt.html)
           - [draft-reddy-cose-hpke-pq-pqt.txt](${{ steps.preview.outputs.preview-url }}draft-reddy-cose-hpke-pq-pqt.txt)
-          - [Diff vs editor's copy](https://author-tools.ietf.org/api/iddiff?url_1=https://tireddy2.github.io/Hybrid-KEM-with-COSE-JOSE/draft-reddy-cose-hpke-pq-pqt.txt&url_2=${{ steps.preview.outputs.preview-url }}draft-reddy-cose-hpke-pq-pqt.txt&difftype=--hwdiff)
+          - [Diff vs editor's copy](https://author-tools.ietf.org/api/iddiff?url_1=https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-pq-pqt.txt&url_2=${{ steps.preview.outputs.preview-url }}draft-reddy-cose-hpke-pq-pqt.txt&difftype=--hwdiff)
 
           <sub>Updated for ${{ github.event.pull_request.head.sha }}. Links may 404 or show stale content for a minute or two while GitHub Pages finishes building. Preview is removed when this PR is closed.</sub>
 
