@@ -26,10 +26,9 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://tireddy2.github.io/Hybrid-KEM-with-COSE-JOSE/draft-reddy-
-   cose-hpke-pq-pqt.html.  Status information for this document may be
-   found at https://datatracker.ietf.org/doc/draft-reddy-cose-hpke-pq-
-   pqt/.
+   https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-
+   pq-pqt.html.  Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-reddy-cose-hpke-pq-pqt/.
 
    Discussion of this document takes place on the cose Working Group
    mailing list (mailto:cose@ietf.org), which is archived at
@@ -37,7 +36,7 @@ About This Document
    https://www.ietf.org/mailman/listinfo/cose/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/tireddy2/Hybrid-KEM-with-COSE-JOSE.
+   https://github.com/tireddy2/cose-hpke-pqt-pqc.
 
 Status of This Memo
 
