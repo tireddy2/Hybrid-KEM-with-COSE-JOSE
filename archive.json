@@ -1,0 +1,871 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2026-04-23T01:16:48.358203+00:00",
+  "repo": "tireddy2/cose-hpke-pqt-pqc",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOLfqsKc51NsYr",
+      "title": "Update draft to align with COSE and JOSE HPKE drafts",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/1",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-07-12T12:20:05Z",
+      "updatedAt": "2024-07-16T04:19:42Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "0346d108f8a6cc427a3fa5b7d4bd8df08f38c1b7",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-1",
+      "headRefOid": "f05824e2baa263d8e1259d9a311111753a162558",
+      "closedAt": "2024-07-16T04:19:42Z",
+      "mergedAt": "2024-07-16T04:19:42Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "7f57d6150e8d255606226a498c05d3aacdfb77fc"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOLfqsKc59OJ1-",
+      "title": "Address comments from the COSE WG",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/2",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-10-01T08:51:20Z",
+      "updatedAt": "2024-11-03T00:29:34Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "7f57d6150e8d255606226a498c05d3aacdfb77fc",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-2",
+      "headRefOid": "fac2b4244cdaed46017ffb6adf9fc30826c58184",
+      "closedAt": "2024-11-03T00:29:34Z",
+      "mergedAt": "2024-11-03T00:29:34Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "a651cf6eeb6cda46b0e143dd12653ca288dbee0b"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOLfqsKc6Bfcpn",
+      "title": "Address comments from Illari",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/3",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-11-11T10:38:00Z",
+      "updatedAt": "2024-12-04T13:48:49Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "a651cf6eeb6cda46b0e143dd12653ca288dbee0b",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-3",
+      "headRefOid": "fa3bfd9b3927d948a5afd3a699d7eb07de7ee395",
+      "closedAt": "2024-12-04T13:48:49Z",
+      "mergedAt": "2024-12-04T13:48:49Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "1169eac49414a3e206c2e470d83accf4e28ff712"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 4,
+      "id": "PR_kwDOLfqsKc6EC0fb",
+      "title": "Address comments from Orie",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/4",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-12-04T13:51:19Z",
+      "updatedAt": "2024-12-06T07:16:05Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "1169eac49414a3e206c2e470d83accf4e28ff712",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-5",
+      "headRefOid": "d2f5dc328d66a2da58960060ba73f5f9f1989254",
+      "closedAt": "2024-12-06T07:16:05Z",
+      "mergedAt": "2024-12-06T07:16:05Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "261fd228fd59c5b76c9913978f5d87f4d5d8eb95"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLfqsKc6Txxfx",
+          "commit": {
+            "abbreviatedOid": "21fc586"
+          },
+          "author": "ilaril",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-04T16:36:02Z",
+          "updatedAt": "2024-12-04T16:43:12Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "This should presumably be a subsection of Security Considerations instead of being its own top-level section.",
+              "createdAt": "2024-12-04T16:36:02Z",
+              "updatedAt": "2024-12-04T16:43:12Z"
+            },
+            {
+              "originalPosition": 7,
+              "body": "I think requirement not to mix post-quantum and quantum-vulnerable algorithms is unnecessarily strict and would cause trouble in algorithm transition (this involves long-term keys). I think the proper requirement would be to not use quantum-vulnerable algorithms for messages that require post-quantum security.",
+              "createdAt": "2024-12-04T16:42:44Z",
+              "updatedAt": "2024-12-04T16:43:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6T2ET5",
+          "commit": {
+            "abbreviatedOid": "21fc586"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-05T04:55:01Z",
+          "updatedAt": "2024-12-05T04:55:02Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Yes, moved text.",
+              "createdAt": "2024-12-05T04:55:02Z",
+              "updatedAt": "2024-12-05T04:55:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6T2EZn",
+          "commit": {
+            "abbreviatedOid": "21fc586"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-05T04:55:29Z",
+          "updatedAt": "2024-12-05T04:55:29Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Updated text, please check. ",
+              "createdAt": "2024-12-05T04:55:29Z",
+              "updatedAt": "2024-12-05T04:55:29Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDOLfqsKc6ETTMb",
+      "title": "Use of AKP Key for X-Wing ",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/5",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-12-06T10:02:26Z",
+      "updatedAt": "2024-12-10T05:41:13Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "261fd228fd59c5b76c9913978f5d87f4d5d8eb95",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-6",
+      "headRefOid": "4f9a55cb51c092c1a8b652da45b55a18ebb33e85",
+      "closedAt": "2024-12-10T05:41:13Z",
+      "mergedAt": "2024-12-10T05:41:13Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "f24f0506e16c0c6eb551b8e2332c29fe8651876d"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLfqsKc6UHPdS",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T14:04:50Z",
+          "updatedAt": "2024-12-06T14:04:50Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "I would use this references for \"X-Wing algorithms\" instead of IANA.\r\n\r\nhttps://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem/",
+              "createdAt": "2024-12-06T14:04:50Z",
+              "updatedAt": "2024-12-06T14:04:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UHQWH",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T14:06:08Z",
+          "updatedAt": "2024-12-06T14:06:08Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Here you should say the algorithm registered in this document.\r\nI do not think you need to leave room for IANA to register other X-Wings, but perhaps that is a consideration",
+              "createdAt": "2024-12-06T14:06:08Z",
+              "updatedAt": "2024-12-06T14:06:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UHRzf",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T14:08:17Z",
+          "updatedAt": "2024-12-06T14:08:18Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "AKP is a new key type that is like OKP, but does not require curve.\r\n\r\nThe spec that defines the \"alg\" can be as specific about \"pub\" and \"priv\" as you want it to be.\r\nI recommend citing https://datatracker.ietf.org/doc/html/draft-connolly-cfrg-xwing-kem-06#name-key-generation\r\n\r\nAnd stating that \"pub\" is concat(pk_M, pk_X)\r\n\r\nIn the case of JWK, this value is base64url encoded.",
+              "createdAt": "2024-12-06T14:08:17Z",
+              "updatedAt": "2024-12-06T14:08:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UHTMZ",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T14:10:07Z",
+          "updatedAt": "2024-12-06T14:10:07Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "I think priv here, should be `sk` (the seed) used to derive ML-KEM and X25519 private keys, as described in the same section I noted above, for example:\r\n\r\n```\r\nGenerateKeyPair() returns the 32 byte secret decapsulation key sk\r\n```",
+              "createdAt": "2024-12-06T14:10:07Z",
+              "updatedAt": "2024-12-06T14:10:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UHT2v",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T14:11:22Z",
+          "updatedAt": "2024-12-06T14:11:22Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "This example is lacking quotes on the JSON keys, and the specific algorithm is subject to change probably.\r\nAlso JSON does not support comments",
+              "createdAt": "2024-12-06T14:11:22Z",
+              "updatedAt": "2024-12-06T14:11:22Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UHUfQ",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "With some nits, but I think this is a step in a good direction",
+          "createdAt": "2024-12-06T14:12:04Z",
+          "updatedAt": "2024-12-06T14:12:04Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UJ9UX",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "ilaril",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T18:51:31Z",
+          "updatedAt": "2024-12-06T18:51:31Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "Section 5.8.2. of draft-connolly-cfrg-xwing-kem-06 says:\r\n\r\n\"The publicKey component MUST be absent.\" (in private keys). That requirement is there for security reasons (as some stated security properties fail otherwise). Unfortunately, \"AKP\" does not allow omitting the public key.\r\n\r\nAnd \"pub\" is X-Wing encapsulation key (as defined by draft-connolly-cfrg-xwing-kem-06). That is 1216 bytes. Treating the value as any sort of concatenation is asking for trouble.",
+              "createdAt": "2024-12-06T18:51:31Z",
+              "updatedAt": "2024-12-06T19:03:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UJ-tY",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "ilaril",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T18:54:53Z",
+          "updatedAt": "2024-12-06T18:54:54Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "\"priv\" is X-Wing decapsulation key (as defined by draft-connolly-cfrg-xwing-kem-06). That is 32-bytes.",
+              "createdAt": "2024-12-06T18:54:54Z",
+              "updatedAt": "2024-12-06T18:54:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UKBx7",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "ilaril",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-06T19:02:01Z",
+          "updatedAt": "2024-12-06T19:02:01Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "Instead of repeating the definition of AKP (possibly incorrectly), this should state what \"pub\" and \"priv\" are for these algorithms.",
+              "createdAt": "2024-12-06T19:02:01Z",
+              "updatedAt": "2024-12-06T19:02:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UUB65",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T09:48:36Z",
+          "updatedAt": "2024-12-09T09:48:36Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "Yes, fixed.",
+              "createdAt": "2024-12-09T09:48:36Z",
+              "updatedAt": "2024-12-09T09:48:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UULK5",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T10:02:17Z",
+          "updatedAt": "2024-12-09T10:02:17Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Agreed, updated text. ",
+              "createdAt": "2024-12-09T10:02:17Z",
+              "updatedAt": "2024-12-09T10:02:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UUQyN",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T10:11:35Z",
+          "updatedAt": "2024-12-09T10:11:35Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "Yes, updated text to say it is X-Wing decapsulation key (sk).",
+              "createdAt": "2024-12-09T10:11:35Z",
+              "updatedAt": "2024-12-09T10:11:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6UUSMi",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T10:13:17Z",
+          "updatedAt": "2024-12-09T10:13:17Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "I modified the text to say \"pub\" is a X-Wing encapsulation key (pk), no need to explicitly say public key must be absent in private keys. ",
+              "createdAt": "2024-12-09T10:13:17Z",
+              "updatedAt": "2024-12-09T10:13:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6Ua0JE",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T20:53:01Z",
+          "updatedAt": "2024-12-09T20:53:01Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "OKP private keys have both x and d... AKP keys have both pub and priv.\r\nAt least that is the intention.",
+              "createdAt": "2024-12-09T20:53:01Z",
+              "updatedAt": "2024-12-09T20:53:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6Ua1Gd",
+          "commit": {
+            "abbreviatedOid": "c910f79"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T20:55:30Z",
+          "updatedAt": "2024-12-09T20:55:31Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\n  When representing an X-Wing private key, the private key parameter MUST be present and MUST contain the X-Wing decapsulation key (sk) as defined in Section 5.2 of {{?I-D.connolly-cfrg-xwing-kem}}. When represented as a JWK, this value MUST be base64url-encoded. \r\n```",
+              "createdAt": "2024-12-09T20:55:31Z",
+              "updatedAt": "2024-12-09T20:55:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6Ua1O_",
+          "commit": {
+            "abbreviatedOid": "c910f79"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T20:55:51Z",
+          "updatedAt": "2024-12-09T20:55:51Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "```suggestion\r\nThe following is an example JWK representation of an \"AKP\" private key for the \"HPKE-XWING-SHA256-AES256GCM\" algorithm:\r\n```",
+              "createdAt": "2024-12-09T20:55:51Z",
+              "updatedAt": "2024-12-09T20:55:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc6Ua1nF",
+          "commit": {
+            "abbreviatedOid": "dce85ae"
+          },
+          "author": "OR13",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-09T20:56:51Z",
+          "updatedAt": "2024-12-09T20:56:51Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "@ilaril I tried to apply your suggestions here: https://github.com/tireddy2/Hybrid-KEM-with-COSE-JOSE/pull/5/files#r1876742416",
+              "createdAt": "2024-12-09T20:56:51Z",
+              "updatedAt": "2024-12-09T20:56:51Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "id": "PR_kwDOLfqsKc7CdiXQ",
+      "title": "Updates to align with HPKE PQ draft",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/6",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-02-09T11:46:32Z",
+      "updatedAt": "2026-02-16T06:50:43Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "5da4ddaf8fd4a0e13a0d6f9950764359e25066ce",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-7",
+      "headRefOid": "3a7a2ce5f24fe67f394c896bc40af51369c9c8c8",
+      "closedAt": "2026-02-16T06:50:43Z",
+      "mergedAt": "2026-02-16T06:50:42Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "86d8601cc88b1ac30b2c95358acd8db4229bf89f"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 7,
+      "id": "PR_kwDOLfqsKc7EBL3N",
+      "title": "Section for security strength",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/7",
+      "state": "MERGED",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-02-16T06:51:26Z",
+      "updatedAt": "2026-02-24T06:48:06Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "86d8601cc88b1ac30b2c95358acd8db4229bf89f",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "tireddy2-patch-8",
+      "headRefOid": "5591ec722528ad5a77defd060856cbc5de483639",
+      "closedAt": "2026-02-24T06:48:06Z",
+      "mergedAt": "2026-02-24T06:48:06Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "fd24ced7afb24c576fe3902f9cb9fe5dc220723c"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDOLfqsKc7UWQYC",
+      "title": "adapt draft-skokan-jose-hpke-pq-pqt for COSE",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/8",
+      "state": "MERGED",
+      "author": "panva",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "as requested",
+      "createdAt": "2026-04-21T15:16:28Z",
+      "updatedAt": "2026-04-22T09:54:37Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "fd24ced7afb24c576fe3902f9cb9fe5dc220723c",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "adapt-from-draft-skokan-jose-hpke-pq-pqt",
+      "headRefOid": "e75c162e1360faeb5e876fa575a3365de30bfb58",
+      "closedAt": "2026-04-22T09:50:07Z",
+      "mergedAt": "2026-04-22T09:50:07Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "1f2e1ebb4287722a9da358acda907907d5e58a59"
+      },
+      "comments": [
+        {
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "body": ":wastebasket: Preview removed because this PR was closed.\n<!-- Sticky Pull Request Commentpr-preview -->",
+          "createdAt": "2026-04-21T15:29:53Z",
+          "updatedAt": "2026-04-22T09:50:57Z"
+        },
+        {
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Note that the links in the comment above will not work for thiS PR on the account `main` not being bootstrapped correctly. Merging this PR should resolve this for future PRs.",
+          "createdAt": "2026-04-21T15:31:11Z",
+          "updatedAt": "2026-04-21T15:31:11Z"
+        },
+        {
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@tireddy2 you should enable pages in https://github.com/tireddy2/Hybrid-KEM-with-COSE-JOSE/settings/pages like so\r\n\r\n<img width=\"786\" height=\"584\" alt=\"image\" src=\"https://github.com/user-attachments/assets/a44e2be5-734e-4c51-8297-6a768445f4c7\" />\r\n",
+          "createdAt": "2026-04-21T17:26:05Z",
+          "updatedAt": "2026-04-21T17:26:05Z"
+        },
+        {
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "body": "> @tireddy2 you should enable pages in https://github.com/tireddy2/Hybrid-KEM-with-COSE-JOSE/settings/pages like so\r\n\r\nDone. ",
+          "createdAt": "2026-04-22T08:13:01Z",
+          "updatedAt": "2026-04-22T08:18:51Z"
+        },
+        {
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "body": "great, the preview now works (mod the diff vs editor's copy since that one doesn't exist on `main`)",
+          "createdAt": "2026-04-22T08:18:33Z",
+          "updatedAt": "2026-04-22T08:18:33Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLfqsKc73aSup",
+          "commit": {
+            "abbreviatedOid": "b3fce9c"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-21T21:26:43Z",
+          "updatedAt": "2026-04-21T21:26:43Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "I appreciate the sentiment here but don't feel it's appropriate for me to be listed as an author. \n \n```suggestion\n```",
+              "createdAt": "2026-04-21T21:26:43Z",
+              "updatedAt": "2026-04-21T21:26:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73aZYQ",
+          "commit": {
+            "abbreviatedOid": "b3fce9c"
+          },
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-21T21:33:53Z",
+          "updatedAt": "2026-04-21T21:33:53Z",
+          "comments": [
+            {
+              "originalPosition": 48,
+              "body": "\ud83d\ude45\u200d\u2642\ufe0f ",
+              "createdAt": "2026-04-21T21:33:53Z",
+              "updatedAt": "2026-04-21T21:33:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73adK5",
+          "commit": {
+            "abbreviatedOid": "b3fce9c"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "CHANGES_REQUESTED",
+          "body": "I appreciate the sentiment behind including me but don't feel it's appropriate for me to be listed as an author.  It'd be somewhat hypocritical of me. I have been critical (in both public and private) of non-contributors being listed as authors and folks that come across as trying to attach their name to as many drafts as possible.",
+          "createdAt": "2026-04-21T21:38:06Z",
+          "updatedAt": "2026-04-21T21:38:06Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73afe0",
+          "commit": {
+            "abbreviatedOid": "e75c162"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-21T21:39:46Z",
+          "updatedAt": "2026-04-21T21:39:46Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73ijFb",
+          "commit": {
+            "abbreviatedOid": "e75c162"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-22T08:11:52Z",
+          "updatedAt": "2026-04-22T08:11:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDOLfqsKc7UmA_E",
+      "title": "Justification",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/9",
+      "state": "OPEN",
+      "author": "hannestschofenig",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-04-22T10:55:09Z",
+      "updatedAt": "2026-04-22T13:38:24Z",
+      "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "baseRefName": "main",
+      "baseRefOid": "d29457ebe13d23b2eb6fef309614dc9ef97942cf",
+      "headRepository": "tireddy2/cose-hpke-pqt-pqc",
+      "headRefName": "justification",
+      "headRefOid": "6388fb8bef27de70723a697408c56334027a1917",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "github-actions",
+          "authorAssociation": "NONE",
+          "body": ":page_facing_up: Rendered draft preview for this PR:\n\n- [draft-reddy-cose-hpke-pq-pqt.html](https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.html)\n- [draft-reddy-cose-hpke-pq-pqt.txt](https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.txt)\n- [Diff vs editor's copy](https://author-tools.ietf.org/api/iddiff?url_1=https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-pq-pqt.txt&url_2=https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.txt&difftype=--hwdiff)\n\n<sub>Updated for 6388fb8bef27de70723a697408c56334027a1917. Links may 404 or show stale content for a minute or two while GitHub Pages finishes building. Preview is removed when this PR is closed.</sub>\n<!-- Sticky Pull Request Commentpr-preview -->",
+          "createdAt": "2026-04-22T10:55:35Z",
+          "updatedAt": "2026-04-22T10:55:35Z"
+        },
+        {
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "body": "There are no gaps in COSE's algorithms since they are a superset of JOSE's.",
+          "createdAt": "2026-04-22T10:56:52Z",
+          "updatedAt": "2026-04-22T10:56:52Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOLfqsKc73qXjI",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-22T13:36:35Z",
+          "updatedAt": "2026-04-22T13:36:35Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73qaaV",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-22T13:38:20Z",
+          "updatedAt": "2026-04-22T13:38:24Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "since gaps don't exist for COSE, you may want to delete the last line in this note. ",
+              "createdAt": "2026-04-22T13:38:20Z",
+              "updatedAt": "2026-04-22T13:38:25Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
