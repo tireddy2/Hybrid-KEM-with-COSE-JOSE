@@ -5,10 +5,10 @@
 CBOR Object Signing and Encryption                              T. Reddy
 Internet-Draft                                                     Nokia
 Intended status: Standards Track                           H. Tschofenig
-Expires: 24 October 2026                                        UniBw M.
+Expires: 25 October 2026                                        UniBw M.
                                                                F. Skokan
                                                                     Okta
-                                                           22 April 2026
+                                                           23 April 2026
 
 
               COSE HPKE PQ & PQ/T Algorithm Registrations
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 October 2026.
+   This Internet-Draft will expire on 25 October 2026.
 
 Copyright Notice
 
@@ -349,10 +349,7 @@ Table of Contents
 
    Note: The HPKE algorithm numbering is intentionally aligned with the
    companion JOSE document so that a given HPKE identifier denotes the
-   same HPKE KEM, KDF, and AEAD combination across JOSE and COSE.  Any
-   numbering gaps are intentional and correspond to registrations that
-   are defined only for JOSE or only for COSE, rather than to a
-   renumbering of shared ciphersuites.
+   same HPKE KEM, KDF, and AEAD combination across JOSE and COSE.
 
 6.1.1.  HPKE-8
 
