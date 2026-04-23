@@ -299,7 +299,7 @@ IANA "COSE Algorithms" registry established by {{RFC9053}}:
 
 Note: The HPKE algorithm numbering is intentionally aligned with the
 companion JOSE document so that a given HPKE identifier denotes the same
-HPKE KEM, KDF, and AEAD combination across JOSE and COSE. 
+HPKE KEM, KDF, and AEAD combination across JOSE and COSE.
 
 <!-- begin:cose-iana-registrations ; see README for regeneration instructions, do not edit -->
 
