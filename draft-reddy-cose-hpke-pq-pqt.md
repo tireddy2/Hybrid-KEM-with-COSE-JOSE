@@ -225,6 +225,15 @@ ML-KEM-1024 acts as a hedge against such cryptanalysis at a modest
 performance penalty, and is RECOMMENDED where the additional overhead
 is acceptable.
 
+Unlike the companion JOSE algorithm registration document, this document
+retains ML-KEM-512-based ciphersuites for COSE. Discussion of this work
+identified COSE-specific deployment interest in these ciphersuites,
+including constrained environments and deployments that already support
+ML-KEM-512 in adjacent protocols and implementations. The ML-KEM-512
+ciphersuites are therefore registered here to preserve that deployment
+option, while the stronger ML-KEM-768- and ML-KEM-1024-based ciphersuites
+remain the preferred choice when their additional overhead is acceptable.
+
 The PQ/T hybrid ciphersuites registered by this document are motivated
 by the PQ/T Hybrid Confidentiality property ({{Section 5 of RFC9794}},
 {{Section 13.1 of I-D.ietf-pquip-pqc-engineers}}): confidentiality is
@@ -287,6 +296,10 @@ defined in this document.
 
 This document requests registration of the following values in the
 IANA "COSE Algorithms" registry established by {{RFC9053}}:
+
+Note: The HPKE algorithm numbering is intentionally aligned with the
+companion JOSE document so that a given HPKE identifier denotes the same
+HPKE KEM, KDF, and AEAD combination across JOSE and COSE.
 
 <!-- begin:cose-iana-registrations ; see README for regeneration instructions, do not edit -->
 
