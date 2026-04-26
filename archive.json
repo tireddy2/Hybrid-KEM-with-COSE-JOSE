@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-04-23T01:16:48.358203+00:00",
+  "timestamp": "2026-04-26T01:18:02.554619+00:00",
   "repo": "tireddy2/cose-hpke-pqt-pqc",
   "labels": [
     {
@@ -797,31 +797,33 @@
       "id": "PR_kwDOLfqsKc7UmA_E",
       "title": "Justification",
       "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/pull/9",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "hannestschofenig",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2026-04-22T10:55:09Z",
-      "updatedAt": "2026-04-22T13:38:24Z",
+      "updatedAt": "2026-04-23T07:04:20Z",
       "baseRepository": "tireddy2/cose-hpke-pqt-pqc",
       "baseRefName": "main",
       "baseRefOid": "d29457ebe13d23b2eb6fef309614dc9ef97942cf",
       "headRepository": "tireddy2/cose-hpke-pqt-pqc",
       "headRefName": "justification",
-      "headRefOid": "6388fb8bef27de70723a697408c56334027a1917",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "7f39085fd7aaa7ef65459d51991ba27b240756c2",
+      "closedAt": "2026-04-23T07:01:57Z",
+      "mergedAt": "2026-04-23T07:01:57Z",
+      "mergedBy": "tireddy2",
+      "mergeCommit": {
+        "oid": "8d53890f46b8e737aef9ceff981e0906387eac26"
+      },
       "comments": [
         {
           "author": "github-actions",
-          "authorAssociation": "NONE",
-          "body": ":page_facing_up: Rendered draft preview for this PR:\n\n- [draft-reddy-cose-hpke-pq-pqt.html](https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.html)\n- [draft-reddy-cose-hpke-pq-pqt.txt](https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.txt)\n- [Diff vs editor's copy](https://author-tools.ietf.org/api/iddiff?url_1=https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-pq-pqt.txt&url_2=https://tireddy2.github.io/cose-hpke-pqt-pqc/pr-preview/pr-9/draft-reddy-cose-hpke-pq-pqt.txt&difftype=--hwdiff)\n\n<sub>Updated for 6388fb8bef27de70723a697408c56334027a1917. Links may 404 or show stale content for a minute or two while GitHub Pages finishes building. Preview is removed when this PR is closed.</sub>\n<!-- Sticky Pull Request Commentpr-preview -->",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": ":wastebasket: Preview removed because this PR was closed.\n<!-- Sticky Pull Request Commentpr-preview -->",
           "createdAt": "2026-04-22T10:55:35Z",
-          "updatedAt": "2026-04-22T10:55:35Z"
+          "updatedAt": "2026-04-23T07:02:36Z"
         },
         {
           "author": "panva",
@@ -864,6 +866,145 @@
               "updatedAt": "2026-04-22T13:38:25Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc7398ZA",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:39:36Z",
+          "updatedAt": "2026-04-23T06:39:37Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "```suggestion\nHPKE KEM, KDF, and AEAD combination across JOSE and COSE. \n```",
+              "createdAt": "2026-04-23T06:39:36Z",
+              "updatedAt": "2026-04-23T06:39:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc7399CG",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:40:07Z",
+          "updatedAt": "2026-04-23T06:40:07Z",
+          "comments": [
+            {
+              "originalPosition": 35,
+              "body": "```suggestion\n```",
+              "createdAt": "2026-04-23T06:40:07Z",
+              "updatedAt": "2026-04-23T06:40:07Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc7399pD",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:40:35Z",
+          "updatedAt": "2026-04-23T06:40:35Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "```suggestion\n```",
+              "createdAt": "2026-04-23T06:40:35Z",
+              "updatedAt": "2026-04-23T06:40:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73991t",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:40:45Z",
+          "updatedAt": "2026-04-23T06:40:46Z",
+          "comments": [
+            {
+              "originalPosition": 36,
+              "body": "```suggestion\n```",
+              "createdAt": "2026-04-23T06:40:45Z",
+              "updatedAt": "2026-04-23T06:40:46Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc739-JQ",
+          "commit": {
+            "abbreviatedOid": "6388fb8"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:41:02Z",
+          "updatedAt": "2026-04-23T06:41:02Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc739-9g",
+          "commit": {
+            "abbreviatedOid": "fe7b789"
+          },
+          "author": "github-actions",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2026-04-23T06:41:44Z",
+          "updatedAt": "2026-04-23T06:41:44Z",
+          "comments": [
+            {
+              "originalPosition": 22,
+              "body": "````suggestion\nHPKE KEM, KDF, and AEAD combination across JOSE and COSE.\n````",
+              "createdAt": "2026-04-23T06:41:44Z",
+              "updatedAt": "2026-04-23T06:41:44Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73-CsT",
+          "commit": {
+            "abbreviatedOid": "7f39085"
+          },
+          "author": "tireddy2",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-23T06:45:17Z",
+          "updatedAt": "2026-04-23T06:45:17Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOLfqsKc73-HY_",
+          "commit": {
+            "abbreviatedOid": "7f39085"
+          },
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2026-04-23T06:49:20Z",
+          "updatedAt": "2026-04-23T06:49:20Z",
+          "comments": []
         }
       ]
     }
