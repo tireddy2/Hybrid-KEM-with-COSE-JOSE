@@ -49,6 +49,7 @@ normative:
   I-D.ietf-cose-dilithium:
 
 informative:
+  RFC8792:
   RFC9052:
   RFC9053:
   RFC9794:
@@ -446,6 +447,12 @@ For each algorithm, a private COSE_Key and an example encrypted COSE message
 (COSE_Encrypt0 for integrated encryption suites, or COSE_Encrypt with a single
 COSE_Recipient for key encryption suites) are provided, each shown in CBOR
 diagnostic notation and as hex-encoded CBOR.
+Long lines in the examples are folded using the single backslash strategy from
+{{RFC8792}}. Before using a folded example as a test vector, remove the RFC 8792
+header and unfold the lines according to that strategy.
+The complete unfolded vector set is available as `examples/cose-vectors.json`
+in the [repository](https://github.com/tireddy2/cose-hpke-pqt-pqc) for this
+document.
 
 <!-- begin:cose-test-vectors ; see README for regeneration instructions, do not edit -->
 
@@ -453,22 +460,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-8-diag.txt}
+{::include examples/folded/cose-keys/HPKE-8-diag.txt}
 ~~~
 {: title="HPKE-8 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-8-hex.txt}
+{::include examples/folded/cose-keys/HPKE-8-hex.txt}
 ~~~
 {: title="HPKE-8 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-8-diag.txt}
+{::include examples/folded/cose/HPKE-8-diag.txt}
 ~~~
 {: title="HPKE-8 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-8-hex.txt}
+{::include examples/folded/cose/HPKE-8-hex.txt}
 ~~~
 {: title="HPKE-8 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -476,22 +483,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-8-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-8-KE-diag.txt}
 ~~~
 {: title="HPKE-8-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-8-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-8-KE-hex.txt}
 ~~~
 {: title="HPKE-8-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-8-KE-diag.txt}
+{::include examples/folded/cose/HPKE-8-KE-diag.txt}
 ~~~
 {: title="HPKE-8-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-8-KE-hex.txt}
+{::include examples/folded/cose/HPKE-8-KE-hex.txt}
 ~~~
 {: title="HPKE-8-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -499,22 +506,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-9-diag.txt}
+{::include examples/folded/cose-keys/HPKE-9-diag.txt}
 ~~~
 {: title="HPKE-9 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-9-hex.txt}
+{::include examples/folded/cose-keys/HPKE-9-hex.txt}
 ~~~
 {: title="HPKE-9 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-9-diag.txt}
+{::include examples/folded/cose/HPKE-9-diag.txt}
 ~~~
 {: title="HPKE-9 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-9-hex.txt}
+{::include examples/folded/cose/HPKE-9-hex.txt}
 ~~~
 {: title="HPKE-9 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -522,22 +529,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-9-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-9-KE-diag.txt}
 ~~~
 {: title="HPKE-9-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-9-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-9-KE-hex.txt}
 ~~~
 {: title="HPKE-9-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-9-KE-diag.txt}
+{::include examples/folded/cose/HPKE-9-KE-diag.txt}
 ~~~
 {: title="HPKE-9-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-9-KE-hex.txt}
+{::include examples/folded/cose/HPKE-9-KE-hex.txt}
 ~~~
 {: title="HPKE-9-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -545,22 +552,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-10-diag.txt}
+{::include examples/folded/cose-keys/HPKE-10-diag.txt}
 ~~~
 {: title="HPKE-10 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-10-hex.txt}
+{::include examples/folded/cose-keys/HPKE-10-hex.txt}
 ~~~
 {: title="HPKE-10 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-10-diag.txt}
+{::include examples/folded/cose/HPKE-10-diag.txt}
 ~~~
 {: title="HPKE-10 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-10-hex.txt}
+{::include examples/folded/cose/HPKE-10-hex.txt}
 ~~~
 {: title="HPKE-10 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -568,22 +575,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-10-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-10-KE-diag.txt}
 ~~~
 {: title="HPKE-10-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-10-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-10-KE-hex.txt}
 ~~~
 {: title="HPKE-10-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-10-KE-diag.txt}
+{::include examples/folded/cose/HPKE-10-KE-diag.txt}
 ~~~
 {: title="HPKE-10-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-10-KE-hex.txt}
+{::include examples/folded/cose/HPKE-10-KE-hex.txt}
 ~~~
 {: title="HPKE-10-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -591,22 +598,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-11-diag.txt}
+{::include examples/folded/cose-keys/HPKE-11-diag.txt}
 ~~~
 {: title="HPKE-11 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-11-hex.txt}
+{::include examples/folded/cose-keys/HPKE-11-hex.txt}
 ~~~
 {: title="HPKE-11 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-11-diag.txt}
+{::include examples/folded/cose/HPKE-11-diag.txt}
 ~~~
 {: title="HPKE-11 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-11-hex.txt}
+{::include examples/folded/cose/HPKE-11-hex.txt}
 ~~~
 {: title="HPKE-11 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -614,22 +621,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-11-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-11-KE-diag.txt}
 ~~~
 {: title="HPKE-11-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-11-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-11-KE-hex.txt}
 ~~~
 {: title="HPKE-11-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-11-KE-diag.txt}
+{::include examples/folded/cose/HPKE-11-KE-diag.txt}
 ~~~
 {: title="HPKE-11-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-11-KE-hex.txt}
+{::include examples/folded/cose/HPKE-11-KE-hex.txt}
 ~~~
 {: title="HPKE-11-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -637,22 +644,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-12-diag.txt}
+{::include examples/folded/cose-keys/HPKE-12-diag.txt}
 ~~~
 {: title="HPKE-12 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-12-hex.txt}
+{::include examples/folded/cose-keys/HPKE-12-hex.txt}
 ~~~
 {: title="HPKE-12 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-12-diag.txt}
+{::include examples/folded/cose/HPKE-12-diag.txt}
 ~~~
 {: title="HPKE-12 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-12-hex.txt}
+{::include examples/folded/cose/HPKE-12-hex.txt}
 ~~~
 {: title="HPKE-12 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -660,22 +667,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-12-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-12-KE-diag.txt}
 ~~~
 {: title="HPKE-12-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-12-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-12-KE-hex.txt}
 ~~~
 {: title="HPKE-12-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-12-KE-diag.txt}
+{::include examples/folded/cose/HPKE-12-KE-diag.txt}
 ~~~
 {: title="HPKE-12-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-12-KE-hex.txt}
+{::include examples/folded/cose/HPKE-12-KE-hex.txt}
 ~~~
 {: title="HPKE-12-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -683,22 +690,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-13-diag.txt}
+{::include examples/folded/cose-keys/HPKE-13-diag.txt}
 ~~~
 {: title="HPKE-13 COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-13-hex.txt}
+{::include examples/folded/cose-keys/HPKE-13-hex.txt}
 ~~~
 {: title="HPKE-13 COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-13-diag.txt}
+{::include examples/folded/cose/HPKE-13-diag.txt}
 ~~~
 {: title="HPKE-13 COSE_Encrypt0 (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-13-hex.txt}
+{::include examples/folded/cose/HPKE-13-hex.txt}
 ~~~
 {: title="HPKE-13 COSE_Encrypt0 (Hex-Encoded CBOR)"}
 
@@ -706,22 +713,22 @@ diagnostic notation and as hex-encoded CBOR.
 {: toc="exclude"}
 
 ~~~ cbor-diag
-{::include examples/cose-keys/HPKE-13-KE-diag.txt}
+{::include examples/folded/cose-keys/HPKE-13-KE-diag.txt}
 ~~~
 {: title="HPKE-13-KE COSE_Key (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose-keys/HPKE-13-KE-hex.txt}
+{::include examples/folded/cose-keys/HPKE-13-KE-hex.txt}
 ~~~
 {: title="HPKE-13-KE COSE_Key (Hex-Encoded CBOR)"}
 
 ~~~ cbor-diag
-{::include examples/cose/HPKE-13-KE-diag.txt}
+{::include examples/folded/cose/HPKE-13-KE-diag.txt}
 ~~~
 {: title="HPKE-13-KE COSE_Encrypt (Diagnostic Notation)"}
 
 ~~~
-{::include examples/cose/HPKE-13-KE-hex.txt}
+{::include examples/folded/cose/HPKE-13-KE-hex.txt}
 ~~~
 {: title="HPKE-13-KE COSE_Encrypt (Hex-Encoded CBOR)"}
 
@@ -734,6 +741,10 @@ Thanks to Ilari Liusvaara and Orie Steele for the discussion and comments.
 
 # Document History
 {:numbered="false"}
+
+draft-reddy-cose-hpke-pq-pqt-03
+
+- Folded long test-vector lines using the RFC 8792 single backslash strategy
 
 draft-reddy-cose-hpke-pq-pqt-00
 
