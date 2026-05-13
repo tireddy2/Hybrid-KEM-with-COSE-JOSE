@@ -746,6 +746,12 @@ draft-reddy-cose-hpke-pq-pqt-03
 
 - Folded long test-vector lines using the RFC 8792 single backslash strategy
 
+draft-reddy-cose-hpke-pq-pqt-02
+
+- Added rationale for retaining ML-KEM-512-based ciphersuites for COSE
+- Added a note that HPKE algorithm numbering is intentionally aligned with
+  the companion JOSE registrations
+
 draft-reddy-cose-hpke-pq-pqt-00
 
 - Replaces draft-reddy-cose-jose-pqc-hybrid-hpke
