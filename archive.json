@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-06-16T02:15:25.151120+00:00",
+  "timestamp": "2026-06-18T02:08:28.888509+00:00",
   "repo": "tireddy2/cose-hpke-pqt-pqc",
   "labels": [
     {
@@ -49,7 +49,32 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 10,
+      "id": "I_kwDOLfqsKc8AAAABFynd0w",
+      "title": "CNSA reference",
+      "url": "https://github.com/tireddy2/cose-hpke-pqt-pqc/issues/10",
+      "state": "OPEN",
+      "author": "tireddy2",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Raised by Sipos, Brian J\n\nOne comment about the reference to CNSA 2.0; the linked document describes the suite as it was in 2022, before NIST standardization of the ML- families, but the actual CNSSP-15 document was released in Dec 2024 and unfortunately does not have a pretty URL. It is linked to from https://www.cnss.gov/CNSS/issuances/Policies.cfm however. I cited the actual policy document from another internet draft as:\n\n \n\n   [CNSA2]    US Committee on National Security Systems, \"Use of Public\n\n              Standards for Secure Information Sharing\", CNSS Policy 15,\n\n              December 2024.",
+      "createdAt": "2026-06-17T13:13:32Z",
+      "updatedAt": "2026-06-17T13:15:35Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "panva",
+          "authorAssociation": "COLLABORATOR",
+          "body": "<img width=\"1110\" height=\"799\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/e5cfd9e9-6073-486f-be2d-22ab5d6e4f61\" />\n\nAt the moment cnss.gov cannot be connected to.",
+          "createdAt": "2026-06-17T13:15:35Z",
+          "updatedAt": "2026-06-17T13:15:35Z"
+        }
+      ]
+    }
+  ],
   "pulls": [
     {
       "number": 1,
