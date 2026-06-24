@@ -5,10 +5,10 @@
 CBOR Object Signing and Encryption                              T. Reddy
 Internet-Draft                                                     Nokia
 Intended status: Standards Track                           H. Tschofenig
-Expires: 25 November 2026                                       UniBw M.
+Expires: 26 December 2026                                       UniBw M.
                                                                F. Skokan
                                                                     Okta
-                                                             24 May 2026
+                                                            24 June 2026
 
 
               COSE HPKE PQ & PQ/T Algorithm Registrations
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 November 2026.
+   This Internet-Draft will expire on 26 December 2026.
 
 Copyright Notice
 
@@ -262,10 +262,10 @@ Table of Contents
 5.  Security Considerations
 
    The security considerations of [I-D.ietf-cose-hpke] and
-   [I-D.ietf-hpke-pq] apply to this document.
-   [I-D.ietf-pquip-pqc-engineers] provides general background on the
-   threat posed by cryptographically relevant quantum computers (CRQCs),
-   the properties of KEMs, and considerations for PQ/T hybrid schemes.
+   [I-D.ietf-hpke-pq] apply to this document.  [RFC9958] provides
+   general background on the threat posed by cryptographically relevant
+   quantum computers (CRQCs), the properties of KEMs, and considerations
+   for PQ/T hybrid schemes.
 
    This document registers ciphersuites based on ML-KEM-512.  As noted
    in Section 3 of [I-D.ietf-hpke-pq], given the relative novelty of ML-
@@ -287,14 +287,13 @@ Table of Contents
 
    The PQ/T hybrid ciphersuites registered by this document are
    motivated by the PQ/T Hybrid Confidentiality property (Section 5 of
-   [RFC9794], Section 13.1 of [I-D.ietf-pquip-pqc-engineers]):
-   confidentiality is preserved as long as at least one of the component
-   algorithms remains secure.  The traditional component protects
-   against unforeseen cryptanalysis of ML-KEM, while the post-quantum
-   component protects against Harvest Now, Decrypt Later (HNDL) attacks
-   (Section 7 of [I-D.ietf-pquip-pqc-engineers]) by a future CRQC.  PQ/T
-   hybrid ciphersuites are generally preferred for this reason during
-   the transition to post-quantum cryptography.
+   [RFC9794], Section 13.1 of [RFC9958]): confidentiality is preserved
+   as long as at least one of the component algorithms remains secure.
+   The traditional component protects against unforeseen cryptanalysis
+   of ML-KEM, while the post-quantum component protects against Harvest
+   Now, Decrypt Later (HNDL) attacks (Section 7 of [RFC9958]) by a
+   future CRQC.  PQ/T hybrid ciphersuites are generally preferred for
+   this reason during the transition to post-quantum cryptography.
 
    The pure PQ ciphersuites are registered to accommodate deployments
    with regulatory or compliance mandates that require the exclusive use
@@ -309,36 +308,35 @@ Table of Contents
    algorithm.  Including a recipient that uses an algorithm that is not
    quantum-resistant would allow an adversary performing an HNDL attack
    to recover the Content Encryption Key once a CRQC becomes available;
-   see Section 15.4 of [I-D.ietf-pquip-pqc-engineers].
+   see Section 15.4 of [RFC9958].
 
 5.1.  Security Strength
 
    Ciphersuites based on ML-KEM-512 target NIST post-quantum security
    level 1; those based on ML-KEM-768 target security level 3; and those
    based on ML-KEM-1024 target security level 5 (see Section 11 of
-   [I-D.ietf-pquip-pqc-engineers]).  In the PQ/T hybrid ciphersuites,
-   the traditional component provides an additional classical security
-   floor: P-256 and X25519 offer approximately 128-bit classical
-   security, while P-384 offers approximately 192-bit classical
-   security.  The -KE variants share the same cryptographic properties
-   as their integrated encryption counterparts.
+   [RFC9958]).  In the PQ/T hybrid ciphersuites, the traditional
+   component provides an additional classical security floor: P-256 and
+   X25519 offer approximately 128-bit classical security, while P-384
+   offers approximately 192-bit classical security.  The -KE variants
+   share the same cryptographic properties as their integrated
+   encryption counterparts.
 
    All ciphersuites use SHAKE256 as the KDF, aligning with the hash
    family used internally by ML-KEM.  The AEAD is paired with the KEM
    security level: ML-KEM-512 ciphersuites use AES-128-GCM, while ML-
    KEM-768, ML-KEM-1024, and the PQ/T hybrid ciphersuites use AES-
-   256-GCM.  As discussed in Section 3.1 of
-   [I-D.ietf-pquip-pqc-engineers], symmetric primitives are only
-   modestly affected by quantum attacks and doubling key sizes is not
-   strictly required; AES-256-GCM is nonetheless selected for the
-   higher-strength ciphersuites to provide a comfortable margin
-   consistent with security level 3 and 5 parameter sets and with
-   contemporary guidance such as [CNSA2.0].  AES-128-GCM is used with
-   ML-KEM-512 since pairing a level-1 KEM with a level-5 AEAD would not
-   improve the overall security level while increasing implementation
-   and bandwidth cost.  The widespread hardware acceleration and broad
-   deployment of AES-GCM make it a reasonable choice for all
-   ciphersuites defined in this document.
+   256-GCM.  As discussed in Section 3.1 of [RFC9958], symmetric
+   primitives are only modestly affected by quantum attacks and doubling
+   key sizes is not strictly required; AES-256-GCM is nonetheless
+   selected for the higher-strength ciphersuites to provide a
+   comfortable margin consistent with security level 3 and 5 parameter
+   sets and with contemporary guidance such as [CNSA2.0].  AES-128-GCM
+   is used with ML-KEM-512 since pairing a level-1 KEM with a level-5
+   AEAD would not improve the overall security level while increasing
+   implementation and bandwidth cost.  The widespread hardware
+   acceleration and broad deployment of AES-GCM make it a reasonable
+   choice for all ciphersuites defined in this document.
 
 6.  IANA Considerations
 
@@ -602,14 +600,6 @@ Table of Contents
               <https://media.defense.gov/2025/May/30/2003728741/-1/-1/0/
               CSA_CNSA_2.0_ALGORITHMS.PDF>.
 
-   [I-D.ietf-pquip-pqc-engineers]
-              Banerjee, A., Reddy.K, T., Schoinianakis, D., Hollebeek,
-              T., and M. Ounsworth, "Post-Quantum Cryptography for
-              Engineers", Work in Progress, Internet-Draft, draft-ietf-
-              pquip-pqc-engineers-14, 25 August 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-pquip-
-              pqc-engineers-14>.
-
    [RFC8792]  Watsen, K., Auerswald, E., Farrel, A., and Q. Wu,
               "Handling Long Lines in Content of Internet-Drafts and
               RFCs", RFC 8792, DOI 10.17487/RFC8792, June 2020,
@@ -628,6 +618,11 @@ Table of Contents
               Post-Quantum Traditional Hybrid Schemes", RFC 9794,
               DOI 10.17487/RFC9794, June 2025,
               <https://www.rfc-editor.org/rfc/rfc9794>.
+
+   [RFC9958]  Banerjee, A., Reddy.K, T., Schoinianakis, D., Hollebeek,
+              T., and M. Ounsworth, "Post-Quantum Cryptography for
+              Engineers", RFC 9958, DOI 10.17487/RFC9958, June 2026,
+              <https://www.rfc-editor.org/rfc/rfc9958>.
 
 Appendix A.  Test Vectors
 
