@@ -18,6 +18,7 @@
 /versioned/
 Gemfile.lock
 archive.json
+draft-ietf-cose-hpke-pq-pqt.xml
 draft-reddy-cose-hpke-pq-pqt.xml
 package-lock.json
 report.xml

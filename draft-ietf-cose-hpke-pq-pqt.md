@@ -3,7 +3,7 @@ title: "COSE HPKE PQ & PQ/T Algorithm Registrations"
 abbrev: "COSE HPKE PQ"
 category: std
 
-docname: draft-reddy-cose-hpke-pq-pqt-latest
+docname: draft-ietf-cose-hpke-pq-pqt-latest
 submissiontype: IETF
 number:
 date:
@@ -26,7 +26,7 @@ venue:
   mail: "cose@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/cose/"
   github: "tireddy2/cose-hpke-pqt-pqc"
-  latest: "https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-reddy-cose-hpke-pq-pqt.html"
+  latest: "https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-ietf-cose-hpke-pq-pqt.html"
 
 author:
  -
@@ -741,6 +741,14 @@ Thanks to Ilari Liusvaara and Orie Steele for the discussion and comments.
 
 # Document History
 {:numbered="false"}
+
+draft-ietf-cose-hpke-pq-pqt-01
+
+- Fixed vector section
+
+draft-ietf-cose-hpke-pq-pqt-00
+
+- Initial WG draft following adoption confirmation
 
 draft-reddy-cose-hpke-pq-pqt-03
 

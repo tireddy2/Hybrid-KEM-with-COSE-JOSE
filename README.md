@@ -2,12 +2,12 @@
 
 # COSE HPKE PQ &amp; PQ/T Algorithm Registrations
 
-This is the working area for the individual Internet-Draft, "COSE HPKE PQ &amp; PQ/T Algorithm Registrations".
+This is the working area for the IETF [COSE Working Group](https://datatracker.ietf.org/group/cose/documents/) Internet-Draft, "COSE HPKE PQ &amp; PQ/T Algorithm Registrations".
 
-* [Editor's Copy](https://tireddy2.github.io/cose-hpke-pqt-pqc/#go.draft-reddy-cose-hpke-pq-pqt.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-reddy-cose-hpke-pq-pqt)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-reddy-cose-hpke-pq-pqt)
-* [Compare Editor's Copy to Individual Draft](https://tireddy2.github.io/cose-hpke-pqt-pqc/#go.draft-reddy-cose-hpke-pq-pqt.diff)
+* [Editor's Copy](https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-ietf-cose-hpke-pq-pqt.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-cose-hpke-pq-pqt/)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-cose-hpke-pq-pqt-00)
+* [Compare Editor's Copy to Working Group Draft](https://author-tools.ietf.org/api/iddiff?doc_1=draft-ietf-cose-hpke-pq-pqt&url_2=https://tireddy2.github.io/cose-hpke-pqt-pqc/draft-ietf-cose-hpke-pq-pqt.txt)
 
 
 ## Contributing
